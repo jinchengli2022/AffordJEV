@@ -1,0 +1,44 @@
+# Python / native builds / local tools
+__pycache__/
+*.py[cod]
+*.so
+*.o
+*.a
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.cache/
+.venv/
+.env
+.DS_Store
+
+# Model tensors are supplied after clone; code/config/tokenizers remain in Git.
+*.safetensors
+*.pth
+*.pt
+*.ckpt
+*.bin
+*.onnx
+
+# Private/local datasets and experimental artifacts
+/data/**
+!/data/**/
+!/data/**/README.md
+!/data/**/.gitkeep
+/checkpoints/**
+!/checkpoints/**/
+!/checkpoints/**/README.md
+!/checkpoints/**/.gitkeep
+/outputs/**
+!/outputs/**/
+!/outputs/**/.gitkeep
+/docs/paper/
+
+# Old machine-specific scheduling setup is not needed by the pipeline.
+/configs/systemd/
+/configs/umd_download_monitor.json
+/scripts/check_umd_download.sh
+
+# The compatibility link to the large checkpoint is local only.
+/third_party/PartGLEE/projects/PartGLEE/checkpoint/

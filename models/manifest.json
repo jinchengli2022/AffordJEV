@@ -1,0 +1,423 @@
+{
+  "schema": 1,
+  "base_assets": [
+    {
+      "path": "models/partglee/PartGLEE_SwinL.pth",
+      "bytes": 1516668265,
+      "sha256": "72bbd7148ed25c8ff67aa47f1f4004aa74b54d66f2ded820217106bd33cafae0",
+      "kind": "weight"
+    },
+    {
+      "path": "models/clip_vit_base_patch32/config.json",
+      "bytes": 4186,
+      "sha256": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/clip_vit_base_patch32/merges.txt",
+      "bytes": 524657,
+      "sha256": "f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/clip_vit_base_patch32/preprocessor_config.json",
+      "bytes": 316,
+      "sha256": "910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/clip_vit_base_patch32/pytorch_model.bin",
+      "bytes": 605247071,
+      "sha256": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f",
+      "kind": "weight"
+    },
+    {
+      "path": "models/clip_vit_base_patch32/special_tokens_map.json",
+      "bytes": 389,
+      "sha256": "f8c0d6c39aee3f8431078ef6646567b0aba7f2246e9c54b8b99d55c22b707cbf",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/clip_vit_base_patch32/tokenizer.json",
+      "bytes": 2224041,
+      "sha256": "b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/clip_vit_base_patch32/tokenizer_config.json",
+      "bytes": 568,
+      "sha256": "cbcdcf14cede6b5c3a6841f37961364357d82bef3079beb115e95f27252526a0",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/clip_vit_base_patch32/vocab.json",
+      "bytes": 862328,
+      "sha256": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/LICENSE",
+      "bytes": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/README.md",
+      "bytes": 2399,
+      "sha256": "b51c7a343794a72d054b549a917f6fb1b77167e3ad1cc3a7b6f3ee8d3ff31fbd",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/batching.py",
+      "bytes": 2953,
+      "sha256": "ea45d4724bcafca559fc5a2a18092918b633746771c19da6554c29bc5f2cef64",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/chat_template.jinja",
+      "bytes": 7756,
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/compiler.py",
+      "bytes": 13627,
+      "sha256": "f35bab2e71b6beb1228daaa5b7baecdacf04eaf713aee14e8082b97090f910b4",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/config.json",
+      "bytes": 3495,
+      "sha256": "15dd1b0e94aa6ad330d3d8c50e4f9ea579edbb21fb2ba13c02b32c3e0ede6527",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/configuration_valen.py",
+      "bytes": 737,
+      "sha256": "735b02402fb5b6c7a1652f6691ba66d066ef99e84500042faec396ff7a668fe5",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/data_types.py",
+      "bytes": 258,
+      "sha256": "b06ce08081d8f7b2bf36abf302410a96086395e75a04f9e9b1c591db519b1641",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/heads.py",
+      "bytes": 6605,
+      "sha256": "63b5970a8bfa121eff94d50ffd35e1fa8387f3af5abccc5f5b75381fb084fc34",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/model-00001-of-00003.safetensors",
+      "bytes": 3991299376,
+      "sha256": "21fef5c5b93c2d9f1e54100f31709aaeb1651058784b9d38c47d9345fdba50d0",
+      "kind": "weight"
+    },
+    {
+      "path": "models/valen/model-00002-of-00003.safetensors",
+      "bytes": 3979833864,
+      "sha256": "9ec6792a776db86b348b97ae3e9ff5feaa055dba2ea28035aac9f1d543623e9b",
+      "kind": "weight"
+    },
+    {
+      "path": "models/valen/model-00003-of-00003.safetensors",
+      "bytes": 1114356012,
+      "sha256": "c7b96a0d85eb01475c0f775a51f88e4455aeae31143cc86c8457723d9019c13e",
+      "kind": "weight"
+    },
+    {
+      "path": "models/valen/model.safetensors.index.json",
+      "bytes": 70787,
+      "sha256": "69f50ed2c7dcbbda30cc1b9ec3413ef84f2ac9aa569f357eec9f8ab63d1fdb95",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/modeling_valen.py",
+      "bytes": 4138,
+      "sha256": "07f87481334cb1e28e9daee036c27bab3654645abf3df7983346b316e7788848",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/processor_config.json",
+      "bytes": 1191,
+      "sha256": "d89ef49ce9cd37fbf510158e13c1ef063d9286411c1ec9049932dbe0487143b1",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/responses.py",
+      "bytes": 1542,
+      "sha256": "298016b0070f1000a38d033e1048e038ff5df6fc1dcbe830601105b181f1d228",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/runtime_model.py",
+      "bytes": 5281,
+      "sha256": "98bf0443ca196900b9f2b056129c84932041b8b53395d111f2fe6d3f2bc1e0a6",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/schema.py",
+      "bytes": 3292,
+      "sha256": "253825862b60016e37fd1040492008ad7f303679c092313d8a6527cf509f3b6e",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/tokenizer.json",
+      "bytes": 19989343,
+      "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+      "kind": "bundled"
+    },
+    {
+      "path": "models/valen/tokenizer_config.json",
+      "bytes": 1139,
+      "sha256": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+      "kind": "bundled"
+    }
+  ],
+  "optional_checkpoints": {
+    "s0": [
+      {
+        "path": "checkpoints/valen_76/s0/321/final/adapter/adapter_config.json",
+        "bytes": 1078,
+        "sha256": "fb98f62fe4004945c849549cd6f65399efe91e30e1fb475a8c092cfcaaddbc65"
+      },
+      {
+        "path": "checkpoints/valen_76/s0/321/final/adapter/adapter_model.safetensors",
+        "bytes": 30524696,
+        "sha256": "f976d547773bc94414eeb6aab59e52b9c57bd6ca7ee2a94598c486a06107f06c"
+      },
+      {
+        "path": "checkpoints/valen_76/s0/321/final/head.safetensors",
+        "bytes": 6867012,
+        "sha256": "4068918e2d2435a9832a28544cec48baa75e8755ac1f802bedae4509a109d38d"
+      },
+      {
+        "path": "checkpoints/valen_76/s0/321/final/status.json",
+        "bytes": 203,
+        "sha256": "9979d7b1867afd9cae29f36fd363554e2a9da8888c1606f0ddfcf8cb3ba8ce26"
+      },
+      {
+        "path": "checkpoints/valen_76/s0/321/final/training_config.json",
+        "bytes": 1517,
+        "sha256": "82e0de81be9a5bb70d3ec97469fdd736ffadcdb38fe0f31e82b88dfbe4000d17"
+      }
+    ],
+    "a0": [
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a0/final/adapter/adapter_config.json",
+        "bytes": 1078,
+        "sha256": "955dd5f731704a3cbf30ac08bf309a0b53ee33c48795e6dc8b9ed3e9e3e30712"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a0/final/adapter/adapter_model.safetensors",
+        "bytes": 30524696,
+        "sha256": "f448f5163093c2c74c097486fa6c06a760cdc3ef189e1fe63b3f465c15984a56"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a0/final/head.safetensors",
+        "bytes": 6867012,
+        "sha256": "f2813ef45475271e2952a071897722198afa272b710d901d2f58a50994459db5"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a0/final/status.json",
+        "bytes": 186,
+        "sha256": "dc86b14f910acacd2a62ecd7f8f630d950feef8bd8cca835d09232da7570e07f"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a0/final/training_config.json",
+        "bytes": 2234,
+        "sha256": "132f62653a386d7837f610081d6f3a1ef953fddc1693e4ad52f700ec329dfded"
+      }
+    ],
+    "a1": [
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a1/final/adapter/adapter_config.json",
+        "bytes": 1078,
+        "sha256": "033a038a00bb3c4ae878c90ac9b0bac57e2d6d72d0a8ff498e014f6b912e8c38"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a1/final/adapter/adapter_model.safetensors",
+        "bytes": 30524696,
+        "sha256": "a9fdc361471d3f600844198465b7a8fa6c8ce02e4505de3d06531d6822bea97d"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a1/final/head.safetensors",
+        "bytes": 6867012,
+        "sha256": "86e195ad1da2890c0be7f5e135c13fa6d9d78c11f27f3d94aac8daa160e61ae3"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a1/final/status.json",
+        "bytes": 186,
+        "sha256": "76ad28ca3cc5a5439e822c0e0aa95003efae751835ad4197e3d7126bc53dd412"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/a1/final/training_config.json",
+        "bytes": 2262,
+        "sha256": "23e4a2636f6697ffb72e6fde801ace69ed50b767ef9c16b6288dc3db808f5cac"
+      }
+    ],
+    "b0": [
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b0/final/adapter/adapter_config.json",
+        "bytes": 1078,
+        "sha256": "4fb03763de09f4e3532b9befad55574daf76e2476944b1b65eac82ca269d90c8"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b0/final/adapter/adapter_model.safetensors",
+        "bytes": 30524696,
+        "sha256": "8881621b22e424489fd59b0631fbd3a1e2ccf979b2880ca90fa3d0a585f0f939"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b0/final/extra_heads.safetensors",
+        "bytes": 6867340,
+        "sha256": "83fb2b348bf75b7f8fa90284f4ccfa910b1cbb5c0e5291ddeb117f9a8918dddd"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b0/final/head.safetensors",
+        "bytes": 6867012,
+        "sha256": "c1036f94e373a0b6333e1dfbe5b7c22685a8e33d6615794c47408acea92b5d42"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b0/final/status.json",
+        "bytes": 186,
+        "sha256": "58368c055fe69f7bee239a2c8c497c1562548177e70e46bb63abcff176f897f9"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b0/final/training_config.json",
+        "bytes": 2254,
+        "sha256": "ff187f487d1bbc4715d53a7d2ab1182e1cf84b3b586d39138087508bb4525916"
+      }
+    ],
+    "b1": [
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b1/final/adapter/adapter_config.json",
+        "bytes": 1078,
+        "sha256": "2df518a67490e8511f67685051fcd31a7ec43ceec74826c15811fbde535da28d"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b1/final/adapter/adapter_model.safetensors",
+        "bytes": 30524696,
+        "sha256": "79f8dad381a7aca39ca84e821dede2229a4992fbe05a304f8032d7be65dd46b0"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b1/final/extra_heads.safetensors",
+        "bytes": 6867340,
+        "sha256": "bace9bf6039ee3de3a372e98bc9566deaccac604ad00bdb9af960b6d698fb5ac"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b1/final/head.safetensors",
+        "bytes": 6867012,
+        "sha256": "65ac36c12bd1d490100f80081fc186ba73280b69d223f87121a5f0c00e1a1beb"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b1/final/status.json",
+        "bytes": 186,
+        "sha256": "30ba95c4a1a6714eb3f64f5f20e53aa0fcf2f37b421c844de0150958dd6637e5"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/b1/final/training_config.json",
+        "bytes": 2255,
+        "sha256": "886c5cbea18f71a300b3e32530ad1d78eea6121c4436357a271410ab6bb8f3dd"
+      }
+    ],
+    "c0": [
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c0/final/adapter/adapter_config.json",
+        "bytes": 1078,
+        "sha256": "66646a3e7761c954c903cce303f07d1e41e064ae0605783fdd4a138efb08f8fc"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c0/final/adapter/adapter_model.safetensors",
+        "bytes": 30524696,
+        "sha256": "bb7a6a32099ee436e3c4dbc4d97eb089197ebd0c130e9b785758528715cc75cb"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c0/final/extra_heads.safetensors",
+        "bytes": 6867404,
+        "sha256": "a0ff53cce9006f45dbaa541a9b0c0017575d3347b427e9aa04991681b781264e"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c0/final/head.safetensors",
+        "bytes": 6867012,
+        "sha256": "3e56d93af1d973ddf11a4fb58ab6a4ef4263a65e755d630e33843459a1c46cea"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c0/final/status.json",
+        "bytes": 186,
+        "sha256": "a7198de42453e5bfbb40f38db6285570efd4caa8f36d96bc1d225b866a5cb4c8"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c0/final/training_config.json",
+        "bytes": 2163,
+        "sha256": "8f2f321f43468012802c8eab40add9cac22eb2db344842e211d42d16e1585b25"
+      }
+    ],
+    "c1": [
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c1/final/adapter/adapter_config.json",
+        "bytes": 1078,
+        "sha256": "ae0d980e42da397458ac75ca6a53c75ccf7c6d3d7b003b133929366543da5d6e"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c1/final/adapter/adapter_model.safetensors",
+        "bytes": 30524696,
+        "sha256": "74491a1a8159466333fda3b425a59fc39eb7db1506abe65c2c8abb2ea4db5e55"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c1/final/extra_heads.safetensors",
+        "bytes": 6867404,
+        "sha256": "da3794f1e2ca8cfc2dda71218210e4a6218a6f949e612450c5b6697125904afa"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c1/final/head.safetensors",
+        "bytes": 6867012,
+        "sha256": "8c78994783d88cfad8a1237795f60d24ae923cfe8d805d372fed096f789c7156"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c1/final/status.json",
+        "bytes": 186,
+        "sha256": "a95bc03d9813fb6d29f8ce7c6234b9665046ef7870124837cc8ba6080ddbfba7"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/c1/final/training_config.json",
+        "bytes": 2170,
+        "sha256": "7040ca4d5b9c3e44191e24717a6cac877ab70b96bb25a61a22e6cb9fb315b0e2"
+      }
+    ],
+    "s0r": [
+      {
+        "path": "checkpoints/valen_76_abc_20261017/s0r/final/adapter/adapter_config.json",
+        "bytes": 1078,
+        "sha256": "c4e4cd153e6352fb7e95d0936e7d3e39f6e782ae5f90c36a5a4c5f89959a01b6"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/s0r/final/adapter/adapter_model.safetensors",
+        "bytes": 30524696,
+        "sha256": "6c1061fe701d110d24a60f59304cef1a108e67d0082010b41742a2d70d885900"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/s0r/final/head.safetensors",
+        "bytes": 6867012,
+        "sha256": "91cce5d7dc852b2cc53814b352d101ecbd16e045d1161a5f19c5ea4e4ca38780"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/s0r/final/status.json",
+        "bytes": 187,
+        "sha256": "3d1ff57067a7bbca188d0f96b7c200ece5f5cf6a56f9dfb033b712b7ea83d3e5"
+      },
+      {
+        "path": "checkpoints/valen_76_abc_20261017/s0r/final/training_config.json",
+        "bytes": 2184,
+        "sha256": "d5c0e41f8bb1d6a9ce528334555d7e1f271bf132e69a6b8749940ca136702379"
+      }
+    ]
+  },
+  "sources": {
+    "partglee": "https://drive.google.com/file/d/1D4my_0SA1f0YR7JOpC-Op92rsiaPtgST/view",
+    "clip": "https://huggingface.co/spaces/Junfeng5/GLEE_demo/resolve/main/GLEE/clip_vit_base_patch32/pytorch_model.bin",
+    "valen": "https://huggingface.co/Valen-Team/Valen-4B/tree/22366059194719ad8c4270567569e1d559491fa3"
+  },
+  "note": "Checkpoint folders are local experiment products; copy their complete final folder excluding optimizer.pt for inference. Base files must keep the listed bytes and hashes."
+}

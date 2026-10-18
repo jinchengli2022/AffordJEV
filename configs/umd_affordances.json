@@ -1,0 +1,19 @@
+{
+  "dataset": "UMD Part Affordance",
+  "mode": "single_label",
+  "unassigned_id": 0,
+  "ignore_gt_ids": [-1],
+  "source": "https://users.umiacs.umd.edu/~fermulcm/affordance/part-affordance-dataset/README.txt",
+  "label_source": "*_label.mat: gt_label (dominant affordance); gt_type=manual",
+  "decision_rules": "Use the supplied UMD functional definitions. Assign one dominant functional role to each visible numbered region. Distinguish a dedicated handle (grasp) from an exterior body that is held by wrapping the hand around it (wrap-grasp); distinguish a concave collecting surface (scoop), a storage cavity (contain), and a relatively flat load-bearing surface (support). Classify the visible pixels, using the unpainted RGB to distinguish inner and outer surfaces. Do not label every region grasp merely because it can be touched or held. A functional region is allowed to cover most or all of the object if the supplied definition applies; there is no whole-object size prohibition. Select none if no supplied role fits or the region is an incompatible mixture. Region colors and ID order carry no functional meaning.",
+  "classes": [
+    {"id": 1, "name": "grasp", "name_zh": "抓握", "color": [230, 85, 65], "definition": "A dedicated handle, grip or finger-holding region used to hold and control the object. Prefer the intended grip, not an arbitrary touchable working surface or broad exterior container body."},
+    {"id": 2, "name": "cut", "name_zh": "切割", "color": [65, 120, 230], "definition": "The sharp blade, edge or cutting working surface that separates material. Exclude the handle and non-cutting support structure."},
+    {"id": 3, "name": "scoop", "name_zh": "舀取", "color": [245, 190, 45], "definition": "A concave working surface used to collect and lift loose or soft material through a scooping motion. Distinguish it from a deep storage cavity and a relatively flat supporting surface."},
+    {"id": 4, "name": "contain", "name_zh": "容纳", "color": [60, 180, 95], "definition": "The visible interior or cavity surface whose primary role is retaining contents. Exclude a separate handle and the exterior surface intended for wrap-grasp."},
+    {"id": 5, "name": "pound", "name_zh": "敲击", "color": [195, 85, 180], "definition": "The solid impact head or striking working surface that delivers force to another material. Exclude the handle and shaft."},
+    {"id": 6, "name": "support", "name_zh": "承托", "color": [45, 190, 200], "definition": "A relatively flat working surface that supports or carries material from underneath. Distinguish it from a concave scoop, a storage cavity and the handle."},
+    {"id": 7, "name": "wrap-grasp", "name_zh": "环抱抓握", "color": [235, 130, 45], "definition": "An exterior body surface held by encircling it with the fingers and palm. Distinguish this body surface from a separate dedicated handle and from a visible interior containing cavity."},
+    {"id": 0, "name": "none", "name_zh": "无匹配", "color": [135, 135, 135], "definition": "The marked pixels do not reliably match any of the seven supplied functional roles, are background, or mix incompatible functional parts. This is a rejection option, not an eighth UMD affordance."}
+  ]
+}

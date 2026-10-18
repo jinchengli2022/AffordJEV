@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UMD · GT 标签核对</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div><span class="eyebrow">UMD / LABEL INSPECTOR</span><h1>GT 标签核对</h1></div>
+    <div class="totals" id="totals"></div>
+  </header>
+  <div class="rule-banner">
+    <span class="rule-tag">唯一修改</span>
+    <span>仅 <strong>ladle（长柄勺）</strong>：</span>
+    <span class="class-label"><i style="--color:rgb(60,180,95)"></i>4 · contain 容纳</span>
+    <span aria-hidden="true">→</span>
+    <span class="class-label"><i style="--color:rgb(245,190,45)"></i>3 · scoop 舀取</span>
+    <span class="rule-note">像素位置与区域边界不变</span>
+    <a href="https://github.com/Reagan1311/OOAL/issues/3#issuecomment-2614175357" target="_blank" rel="noreferrer">作者说明 ↗</a>
+  </div>
+  <div class="layout">
+    <aside class="sidebar" aria-label="样本筛选">
+      <div class="filter-heading"><h2>样本</h2><button id="reset" class="text-button">查看全部</button></div>
+      <label class="field">数据范围<select id="split"><option value="all">全部 · 训练示例与测试集</option><option value="test">novel / test · 2,661 张</option><option value="train">novel / train · 76 张示例</option></select></label>
+      <label class="field">物体类别<select id="category"><option value="all">全部物体</option></select></label>
+      <label class="field">物体实例<select id="instance"><option value="all">全部实例</option></select></label>
+      <label class="field">搜索<input id="search" type="search" placeholder="物体、实例或帧号" autocomplete="off"></label>
+      <label class="checkbox"><input id="changedOnly" type="checkbox" checked>只看有修改的图像</label>
+      <div class="list-heading"><span id="filterCount"></span><span>点击查看</span></div>
+      <div id="sampleList" class="sample-list" aria-label="图像列表"></div>
+      <div class="pagination"><button id="pagePrev" aria-label="上一页">←</button><span id="pageText"></span><button id="pageNext" aria-label="下一页">→</button></div>
+      <p class="scope-note">完整覆盖本轮测试集与作者选取的 76 张训练示例。训练示例不含 ladle。</p>
+    </aside>
+    <main>
+      <section class="sample-heading">
+        <div><div class="eyebrow" id="sampleCategory"></div><h2 id="sampleTitle">正在加载标签…</h2><p id="sampleMeta"></p></div>
+        <div class="sample-nav"><button id="previous">← 上一张</button><span id="samplePosition"></span><button id="next">下一张 →</button></div>
+      </section>
+      <section class="toolbar" aria-label="显示控制">
+        <div class="control-group"><span>显示</span><div class="segmented"><button id="overlayMode" class="active" aria-pressed="true">叠加 RGB</button><button id="labelMode" aria-pressed="false">纯标签</button></div></div>
+        <label class="control-group" for="opacity">透明度<input id="opacity" type="range" min="0" max="100" value="58"><output id="opacityValue">58%</output></label>
+        <div class="control-group view-controls"><button id="fitObject" class="active">物体放大</button><button id="fitImage">完整图像</button><label for="zoom">缩放</label><input id="zoom" type="range" min="1" max="12" step="0.1" value="1"><output id="zoomValue">1×</output></div>
+      </section>
+      <div class="legend" id="legend" aria-label="功能类别，点击单独高亮"></div>
+      <div id="error" class="error" role="alert" hidden></div>
+      <div class="canvas-grid" id="canvasGrid" aria-busy="true">
+        <figure><figcaption><span><b>01</b> RGB</span><a id="downloadRgb" download>下载原图</a></figcaption><div class="canvas-frame"><canvas id="rgbCanvas" width="640" height="480" role="img" aria-label="RGB 原图"></canvas><div class="crosshair" hidden></div></div></figure>
+        <figure><figcaption><span><b>02</b> 原始 UMD GT</span><a id="downloadOriginal" download>下载类别图</a></figcaption><div class="canvas-frame"><canvas id="originalCanvas" width="640" height="480" role="img" aria-label="原始 UMD 标签"></canvas><div class="crosshair" hidden></div></div></figure>
+        <figure><figcaption><span><b>03</b> 按 OOAL 规则修改的 GT</span><a id="downloadRemapped" download>下载类别图</a></figcaption><div class="canvas-frame"><canvas id="remappedCanvas" width="640" height="480" role="img" aria-label="按 OOAL 规则修改的标签"></canvas><div class="crosshair" hidden></div></div></figure>
+        <figure><figcaption><span><b>04</b> 变化区域</span><a id="downloadChanged" download>下载二值 mask</a></figcaption><div class="canvas-frame"><canvas id="changedCanvas" width="640" height="480" role="img" aria-label="发生标签变化的像素"></canvas><div class="crosshair" hidden></div></div><span class="difference-note" id="differenceNote"></span></figure>
+      </div>
+      <div class="inspector" id="inspector" aria-live="polite">指向图像查看原始像素坐标与前后标签；放大后可拖动图像。</div>
+      <section class="details-row">
+        <div class="pixel-summary"><h3>功能像素</h3><table><thead><tr><th>类别</th><th>原始 GT</th><th>修改后 GT</th><th>变化</th></tr></thead><tbody id="pixelTable"></tbody></table></div>
+        <div class="explanation"><h3>如何阅读</h3><p>绿色 <strong>contain</strong> 改为黄色 <strong>scoop</strong>；洋红色标出类别发生变化的像素。红色手柄 <strong>grasp</strong> 保持不变。</p><p id="currentExplanation"></p><details><summary>标签来源与导出格式</summary><p>读取原始 <code>*_label.mat</code> 中的 <code>gt_label</code>。修改后的测试标签依据作者公开规则生成，不是作者发布的测试标签文件。</p><p>下载的类别图是带调色板的 PNG：像素仍为 0–7 的类别 ID，背景为 0；变化 mask 为 0/255。显示缩放不会改变导出分辨率。</p><p>原始 MAT、rank 标签、模型预测和实验指标均未修改。</p><a href="audit.json">查看生成校验记录</a></details></div>
+      </section>
+      <footer><span>方向键 ← / → 切换图像 · 点击图例筛选显示类别</span><span id="footerStatus"></span></footer>
+    </main>
+  </div>
+  <noscript>请启用浏览器 JavaScript，以查看交互式标签界面。</noscript>
+</body>
+</html>

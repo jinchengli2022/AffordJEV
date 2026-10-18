@@ -1,0 +1,31 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<title>UMD：A／B／C 实验逐图对比</title>
+<style>
+@font-face{font-family:UMDExperiment;src:url('fonts/experiment-ui.woff') format('woff');font-display:swap}
+body{font:16px UMDExperiment,system-ui;margin:24px;color:#222;background:#fff}h1{font-size:24px}h2{font-size:18px}
+select,button{font:inherit;padding:6px;margin:4px;max-width:95%}.grid{display:grid;grid-template-columns:repeat(4,minmax(200px,1fr));gap:15px}.panel{position:relative}.panel img{display:block;width:100%;height:auto}.panel canvas{position:absolute;left:0;top:0;width:100%;height:100%}figure{margin:0}figcaption{margin:8px 0}.legend span{display:inline-block;padding:4px 9px;margin:4px}.inputs{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}.inputs img{max-height:330px;max-width:100%}.note{color:#555;font-size:14px}@media(max-width:950px){.grid{grid-template-columns:repeat(2,minmax(200px,1fr))}}
+</style>
+<h1>UMD novel/test：A／B／C 实验</h1>
+<p class="note">固定相同 PartGLEE 候选；原始 dominant GT。图上分数为该图已有功能的平均 IoU，总体 mIoU 见实验结果文档。</p>
+<div><label>对照 <select id="reference"></select></label><label>实验 <select id="variant"></select></label></div>
+<div><select id="category"><option value="">全部物体类别</option></select><select id="sample"></select>
+<button id="prev">上一张</button><button id="next">下一张</button>
+<label><input id="crop" type="checkbox" checked>放大物体区域</label></div>
+<div id="score" class="note"></div><div class="legend" id="legend"></div><div class="grid" id="grid"></div>
+<h2>实际三张输入图</h2><div class="inputs" id="inputs"></div>
+<p class="note">全部组沿用这三张输入图和同一组预测 mask。C 另按 mask 池化未填色 RGB 的目标／邻近／整物体特征。输入编号和颜色不代表功能类别；GT 只用于评测。</p>
+<script src="data.js"></script><script>
+const data=window.EXPERIMENT,names=['none','grasp','cut','scoop','contain','pound','support','wrap-grasp'];
+const colors=[[135,135,135],[230,85,65],[65,120,230],[245,190,45],[60,180,95],[195,85,180],[45,190,200],[235,130,45]];
+const $=id=>document.getElementById(id);let filtered=data.items;
+for(const cat of [...new Set(data.items.map(x=>x.category))])$('category').add(new Option(cat,cat));
+for(const [k,v]of Object.entries(data.methods)){for(const id of ['reference','variant'])$(id).add(new Option(v,k))}
+$('reference').value='s0r';$('variant').value='b0';
+for(let k=1;k<8;k++){let s=document.createElement('span');s.style.background=`rgba(${colors[k]},0.5)`;s.textContent=names[k];$('legend').append(s)}
+function panel(label,rgb,mask){let f=document.createElement('figure'),title=document.createElement('figcaption');title.textContent=label;f.append(title);let p=document.createElement('div');p.className='panel';let im=new Image();im.src=rgb;p.append(im);if(mask){let canvas=document.createElement('canvas');p.append(canvas);let m=new Image();m.onload=()=>{canvas.width=m.width;canvas.height=m.height;let ctx=canvas.getContext('2d');ctx.drawImage(m,0,0);let pix=ctx.getImageData(0,0,m.width,m.height);for(let i=0;i<pix.data.length;i+=4){let k=pix.data[i];if(k>=1&&k<=7){let c=colors[k];pix.data[i]=c[0];pix.data[i+1]=c[1];pix.data[i+2]=c[2];pix.data[i+3]=140}else pix.data[i+3]=0}ctx.putImageData(pix,0,0)};m.src=mask}f.append(p);$('grid').append(f)}
+function show(){let item=filtered[+$('sample').value],ref=$('reference').value,variant=$('variant').value;$('grid').replaceChildren();panel('RGB · '+item.id,item.rgb,null);panel('原始 UMD GT',item.rgb,item.gt);for(const k of [ref,variant])panel(data.methods[k]+' · '+(100*item.ious[k]).toFixed(2)+'%',item.rgb,item.predictions[k]);$('score').textContent='当前图片平均 IoU 变化：'+((item.ious[variant]-item.ious[ref])*100).toFixed(2)+' 个百分点';let [x0,y0,x1,y1]=$('crop').checked?item.crop:[0,0,...item.size];for(const p of document.querySelectorAll('.panel')){p.style.aspectRatio=(x1-x0)+' / '+(y1-y0);p.style.overflow='hidden';for(const im of p.children){im.style.position='absolute';im.style.width=(100*item.size[0]/(x1-x0))+'%';im.style.height=(100*item.size[1]/(y1-y0))+'%';im.style.left=(-100*x0/(x1-x0))+'%';im.style.top=(-100*y0/(y1-y0))+'%'}}$('inputs').replaceChildren();for(const [i,src]of item.inputs[variant].entries()){let f=document.createElement('figure'),cap=document.createElement('figcaption');cap.textContent=['1 · 未填色 RGB 裁剪','2 · 全部候选编号','3 · 逐区域拼图'][i];let a=document.createElement('a');a.href=src;a.target='_blank';let im=new Image();im.src=src;a.append(im);f.append(cap,a);$('inputs').append(f)}}
+function filter(){filtered=data.items.filter(x=>!$('category').value||x.category==$('category').value);$('sample').replaceChildren();filtered.forEach((x,i)=>$('sample').add(new Option(x.id,String(i))));show()}
+$('category').onchange=filter;for(const id of ['sample','reference','variant','crop'])$(id).onchange=show;
+$('prev').onclick=()=>{$('sample').selectedIndex=($('sample').selectedIndex+filtered.length-1)%filtered.length;show()};
+$('next').onclick=()=>{$('sample').selectedIndex=($('sample').selectedIndex+1)%filtered.length;show()};filter();
+</script></html>

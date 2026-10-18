@@ -1,0 +1,109 @@
+{
+  "state": {
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Classify each numbered visible region by its dominant functional role. The first image is an unpainted RGB crop; the second is the same crop with numbered masks. Colors and numbers are annotations, not physical appearance. Use the RGB to judge the surface inside each numbered mask. Use the supplied UMD functional definitions. Assign one dominant functional role to each visible numbered region. Distinguish a dedicated handle (grasp) from an exterior body that is held by wrapping the hand around it (wrap-grasp); distinguish a concave collecting surface (scoop), a storage cavity (contain), and a relatively flat load-bearing surface (support). Classify the visible pixels, using the unpainted RGB to distinguish inner and outer surfaces. Do not label every region grasp merely because it can be touched or held. A functional region is allowed to cover most or all of the object if the supplied definition applies; there is no whole-object size prohibition. Select none if no supplied role fits or the region is an incompatible mixture. Region colors and ID order carry no functional meaning."
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "foreground/rgb_crop.png"
+            }
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "regions/numbered_crop.png"
+            }
+          },
+          {
+            "type": "text",
+            "text": "Each additional panel highlights one candidate on the same RGB crop."
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "regions/region_sheet.jpg"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "questions": {
+    "region_01": {
+      "type": "choice",
+      "instructions": "For region 1, select exactly one dominant role using the supplied definitions. Judge the marked pixels. Use none when no role fits.",
+      "criteria": {
+        "grasp": "A dedicated handle, grip or finger-holding region used to hold and control the object. Prefer the intended grip, not an arbitrary touchable working surface or broad exterior container body.",
+        "cut": "The sharp blade, edge or cutting working surface that separates material. Exclude the handle and non-cutting support structure.",
+        "scoop": "A concave working surface used to collect and lift loose or soft material through a scooping motion. Distinguish it from a deep storage cavity and a relatively flat supporting surface.",
+        "contain": "The visible interior or cavity surface whose primary role is retaining contents. Exclude a separate handle and the exterior surface intended for wrap-grasp.",
+        "pound": "The solid impact head or striking working surface that delivers force to another material. Exclude the handle and shaft.",
+        "support": "A relatively flat working surface that supports or carries material from underneath. Distinguish it from a concave scoop, a storage cavity and the handle.",
+        "wrap-grasp": "An exterior body surface held by encircling it with the fingers and palm. Distinguish this body surface from a separate dedicated handle and from a visible interior containing cavity.",
+        "none": "The marked pixels do not reliably match any of the seven supplied functional roles, are background, or mix incompatible functional parts. This is a rejection option, not an eighth UMD affordance."
+      }
+    },
+    "region_02": {
+      "type": "choice",
+      "instructions": "For region 2, select exactly one dominant role using the supplied definitions. Judge the marked pixels. Use none when no role fits.",
+      "criteria": {
+        "grasp": "A dedicated handle, grip or finger-holding region used to hold and control the object. Prefer the intended grip, not an arbitrary touchable working surface or broad exterior container body.",
+        "cut": "The sharp blade, edge or cutting working surface that separates material. Exclude the handle and non-cutting support structure.",
+        "scoop": "A concave working surface used to collect and lift loose or soft material through a scooping motion. Distinguish it from a deep storage cavity and a relatively flat supporting surface.",
+        "contain": "The visible interior or cavity surface whose primary role is retaining contents. Exclude a separate handle and the exterior surface intended for wrap-grasp.",
+        "pound": "The solid impact head or striking working surface that delivers force to another material. Exclude the handle and shaft.",
+        "support": "A relatively flat working surface that supports or carries material from underneath. Distinguish it from a concave scoop, a storage cavity and the handle.",
+        "wrap-grasp": "An exterior body surface held by encircling it with the fingers and palm. Distinguish this body surface from a separate dedicated handle and from a visible interior containing cavity.",
+        "none": "The marked pixels do not reliably match any of the seven supplied functional roles, are background, or mix incompatible functional parts. This is a rejection option, not an eighth UMD affordance."
+      }
+    },
+    "region_03": {
+      "type": "choice",
+      "instructions": "For region 3, select exactly one dominant role using the supplied definitions. Judge the marked pixels. Use none when no role fits.",
+      "criteria": {
+        "grasp": "A dedicated handle, grip or finger-holding region used to hold and control the object. Prefer the intended grip, not an arbitrary touchable working surface or broad exterior container body.",
+        "cut": "The sharp blade, edge or cutting working surface that separates material. Exclude the handle and non-cutting support structure.",
+        "scoop": "A concave working surface used to collect and lift loose or soft material through a scooping motion. Distinguish it from a deep storage cavity and a relatively flat supporting surface.",
+        "contain": "The visible interior or cavity surface whose primary role is retaining contents. Exclude a separate handle and the exterior surface intended for wrap-grasp.",
+        "pound": "The solid impact head or striking working surface that delivers force to another material. Exclude the handle and shaft.",
+        "support": "A relatively flat working surface that supports or carries material from underneath. Distinguish it from a concave scoop, a storage cavity and the handle.",
+        "wrap-grasp": "An exterior body surface held by encircling it with the fingers and palm. Distinguish this body surface from a separate dedicated handle and from a visible interior containing cavity.",
+        "none": "The marked pixels do not reliably match any of the seven supplied functional roles, are background, or mix incompatible functional parts. This is a rejection option, not an eighth UMD affordance."
+      }
+    },
+    "region_04": {
+      "type": "choice",
+      "instructions": "For region 4, select exactly one dominant role using the supplied definitions. Judge the marked pixels. Use none when no role fits.",
+      "criteria": {
+        "grasp": "A dedicated handle, grip or finger-holding region used to hold and control the object. Prefer the intended grip, not an arbitrary touchable working surface or broad exterior container body.",
+        "cut": "The sharp blade, edge or cutting working surface that separates material. Exclude the handle and non-cutting support structure.",
+        "scoop": "A concave working surface used to collect and lift loose or soft material through a scooping motion. Distinguish it from a deep storage cavity and a relatively flat supporting surface.",
+        "contain": "The visible interior or cavity surface whose primary role is retaining contents. Exclude a separate handle and the exterior surface intended for wrap-grasp.",
+        "pound": "The solid impact head or striking working surface that delivers force to another material. Exclude the handle and shaft.",
+        "support": "A relatively flat working surface that supports or carries material from underneath. Distinguish it from a concave scoop, a storage cavity and the handle.",
+        "wrap-grasp": "An exterior body surface held by encircling it with the fingers and palm. Distinguish this body surface from a separate dedicated handle and from a visible interior containing cavity.",
+        "none": "The marked pixels do not reliably match any of the seven supplied functional roles, are background, or mix incompatible functional parts. This is a rejection option, not an eighth UMD affordance."
+      }
+    },
+    "region_05": {
+      "type": "choice",
+      "instructions": "For region 5, select exactly one dominant role using the supplied definitions. Judge the marked pixels. Use none when no role fits.",
+      "criteria": {
+        "grasp": "A dedicated handle, grip or finger-holding region used to hold and control the object. Prefer the intended grip, not an arbitrary touchable working surface or broad exterior container body.",
+        "cut": "The sharp blade, edge or cutting working surface that separates material. Exclude the handle and non-cutting support structure.",
+        "scoop": "A concave working surface used to collect and lift loose or soft material through a scooping motion. Distinguish it from a deep storage cavity and a relatively flat supporting surface.",
+        "contain": "The visible interior or cavity surface whose primary role is retaining contents. Exclude a separate handle and the exterior surface intended for wrap-grasp.",
+        "pound": "The solid impact head or striking working surface that delivers force to another material. Exclude the handle and shaft.",
+        "support": "A relatively flat working surface that supports or carries material from underneath. Distinguish it from a concave scoop, a storage cavity and the handle.",
+        "wrap-grasp": "An exterior body surface held by encircling it with the fingers and palm. Distinguish this body surface from a separate dedicated handle and from a visible interior containing cavity.",
+        "none": "The marked pixels do not reliably match any of the seven supplied functional roles, are background, or mix incompatible functional parts. This is a rejection option, not an eighth UMD affordance."
+      }
+    }
+  }
+}

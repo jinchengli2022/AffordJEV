@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UMD · 固定候选＋GT 多数类别</title>
+  <link rel="stylesheet" href="viewer.css">
+  <script src="data.js" defer></script>
+  <script src="viewer.js" defer></script>
+</head>
+<body>
+<main>
+  <header>
+    <div><h1>固定候选＋GT 多数类别</h1><p id="summary">正在载入全部样本…</p></div>
+    <nav><a href="metrics.json">指标</a><a href="audit.json">核对记录</a><a href="README.md">文件说明</a></nav>
+  </header>
+  <p class="notice"><strong>使用 GT 的诊断，不是模型成绩。</strong>保留候选 mask，每个候选统一赋为其有效 GT 像素最多的类别；背景也参与多数统计，未覆盖区域为 0。</p>
+  <section class="controls" aria-label="样本筛选">
+    <label>物体类别<select id="category"><option value="">全部类别</option></select></label>
+    <label>物体实例<select id="instance"><option value="">全部实例</option></select></label>
+    <label class="sample-select">样本<select id="sample"></select></label>
+    <label>搜索<input id="search" type="search" placeholder="实例或帧号" autocomplete="off"></label>
+    <div class="paging"><button id="prev" aria-label="上一张">← 上一张</button><span id="counter"></span><button id="next" aria-label="下一张">下一张 →</button></div>
+  </section>
+  <section class="view-controls" aria-label="显示设置">
+    <label>裁剪<select id="crop"><option value="inspection">检查裁剪（含 GT 与候选）</option><option value="source">模型原裁剪</option><option value="full">完整 RGB</option></select></label>
+    <label>叠加 <input id="opacity" type="range" min="0" max="100" step="1" value="45"><output id="opacity-value">45%</output></label>
+    <label><input id="edges" type="checkbox" checked> 显示边界</label>
+    <label><input id="numbers" type="checkbox" checked> 候选编号</label>
+    <label><input id="mask-only" type="checkbox"> 仅看标签</label>
+    <a id="download-map" download="class_map.png">下载原尺寸 class_map（0–7）</a>
+    <a id="sample-json">逐区域 JSON</a>
+  </section>
+  <div id="status" role="status" aria-live="polite"></div>
+  <section class="panels" aria-label="四面板对照">
+    <figure><figcaption>RGB</figcaption><canvas id="rgb" width="800" height="580"></canvas></figure>
+    <figure><figcaption>固定候选 · 编号与表格对应</figcaption><canvas id="candidates" width="800" height="580"></canvas></figure>
+    <figure><figcaption>GT 多数类别重赋值</figcaption><canvas id="majority" width="800" height="580"></canvas></figure>
+    <figure><figcaption>原始 dominant GT</figcaption><canvas id="gt" width="800" height="580"></canvas></figure>
+  </section>
+  <div id="legend" class="legend"></div>
+  <section class="sample-info">
+    <h2 id="sample-title"></h2><p id="sample-metrics"></p><div id="query-metrics" class="query-metrics"></div>
+  </section>
+  <div class="table-wrap"><table><thead><tr><th>候选</th><th>原 Valen 类别</th><th>GT 多数类别</th><th>GT 纯度</th><th>有效像素</th><th>候选内部的 GT 像素计数</th></tr></thead><tbody id="regions"></tbody></table></div>
+  <p class="footnote">点击表格行可定位候选。GT 纯度＝该候选最多类别的像素数／有效像素数。并列时优先保留原预测，否则取较小类别 ID；GT 的 −1 忽略。背景多数候选仍保留在编号图中，输出类别为 0。左右方向键翻页。</p>
+  <details><summary>指标与文件编码</summary><p>mIoU：全量混淆矩阵上 7 个功能类别的平均 IoU。gIoU：全部 GT 存在的图像＋功能对的平均 IoU。单图平均仅统计该图 GT 出现的功能，不等于全量 mIoU。</p><p>class_map.png：单通道 0–7，0 为背景／未覆盖。gt_class_map.png：0–7，255 表示原始 GT 的 −1。candidate_ids.png：候选编号，0 为未分配。检查裁剪仅用于展示，不参与分割或评测。</p></details>
+</main>
+</body>
+</html>

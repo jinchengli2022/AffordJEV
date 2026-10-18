@@ -1,0 +1,1338 @@
+{
+  "format_version": 1,
+  "selection": "OOAL author-selected novel/train, one fixed image per training instance",
+  "label_policy": "Original dominant gt_label, IDs 0..7; ignore -1; no ladle remapping",
+  "source_verification": {
+    "selection_manifest": "data/UMD/manifests/ooal_novel_train_76.jsonl",
+    "selection_manifest_sha256_at_export": "f24b0a52e4e3604d3869e846ba576df3503712e0fc33d14002771de22c6525ee",
+    "author_one_shot_archive_sha256": "7049f67a220e1db3925091c34301902524d6e5c4f21b5bc8bd9bad3d14ca1df3",
+    "author_rgb_pixels_match_original": 76,
+    "author_labels_match_original_dominant": 76,
+    "note": "The author archive was verified when this selection was exported. Rebuilding uses the pinned original RGB/MAT checksums below; it does not require OOAL code, weights or the author archive."
+  },
+  "novel_split_sha256": "48e2b7c5ffc0476ac982af2d26496e7120d9d7e0ef3ee0531c6689eee0cafbdd",
+  "training_samples": 76,
+  "training_instances": 76,
+  "training_categories": [
+    "bowl",
+    "hammer",
+    "knife",
+    "mallet",
+    "mug",
+    "scissors",
+    "spoon",
+    "turner"
+  ],
+  "training_annotation_types": {
+    "manual": 32,
+    "automatic": 44
+  },
+  "test_samples": 2661,
+  "test_instances": 29,
+  "test_categories": [
+    "cup",
+    "ladle",
+    "pot",
+    "saw",
+    "scoop",
+    "shears",
+    "shovel",
+    "tenderizer",
+    "trowel"
+  ],
+  "test_annotation_type": "manual",
+  "samples": [
+    {
+      "sample_id": "bowl_01/00000013",
+      "object_instance": "bowl_01",
+      "frame_index": 13,
+      "rgb": "tools/bowl_01/bowl_01_00000013_rgb.jpg",
+      "annotation": "tools/bowl_01/bowl_01_00000013_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "8bf535ff696b6387a1078e50eb0595c535cfdf87c8856fb28f0aa4a6de2ce723",
+      "annotation_sha256": "dc58e5344c9659488bf83bee2d53cd4f2d15908c2a38985e8e174eb97ede19dc",
+      "author_label_member": "train_novel_one_pick/bowl_01_00000013_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "bowl_02/00000078",
+      "object_instance": "bowl_02",
+      "frame_index": 78,
+      "rgb": "tools/bowl_02/bowl_02_00000078_rgb.jpg",
+      "annotation": "tools/bowl_02/bowl_02_00000078_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "5d5f54a07da77d847bd17a1c4ec3421a65ee94d8dcf9a51c4d385f35d4455ba6",
+      "annotation_sha256": "adf71525443c6c0dd34f99d7a034c2e78f22a147432b96b5e905dcd83f6038ff",
+      "author_label_member": "train_novel_one_pick/bowl_02_00000078_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "bowl_03/00000138",
+      "object_instance": "bowl_03",
+      "frame_index": 138,
+      "rgb": "tools/bowl_03/bowl_03_00000138_rgb.jpg",
+      "annotation": "tools/bowl_03/bowl_03_00000138_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "3fa44c16dd417704e3a300493bc3106ec72e409dcbda1c6d095cbab45176d1dc",
+      "annotation_sha256": "dfb98108fcab979b2d882eef017c551d6eb983849a78d3e69edfc378a2b09920",
+      "author_label_member": "train_novel_one_pick/bowl_03_00000138_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "bowl_04/00000006",
+      "object_instance": "bowl_04",
+      "frame_index": 6,
+      "rgb": "tools/bowl_04/bowl_04_00000006_rgb.jpg",
+      "annotation": "tools/bowl_04/bowl_04_00000006_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "f5a8cbdde85044755078324f46569d2fe2d975d4cb4669b1f740392cd616ce8b",
+      "annotation_sha256": "3ab51bf9349edb636bd1d7ae7186ed8a2373379e1d634f4910cf18f4fca9fd4c",
+      "author_label_member": "train_novel_one_pick/bowl_04_00000006_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "bowl_05/00000023",
+      "object_instance": "bowl_05",
+      "frame_index": 23,
+      "rgb": "tools/bowl_05/bowl_05_00000023_rgb.jpg",
+      "annotation": "tools/bowl_05/bowl_05_00000023_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "02b4f2aac33de500b78fb0ee50d1a6687521ac7f7aaec5a9e58a71e2603b702c",
+      "annotation_sha256": "08ca198d4fe6a4d866c3fa3f911515010a83c18094b37ee10f3f14613206b522",
+      "author_label_member": "train_novel_one_pick/bowl_05_00000023_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "bowl_06/00000012",
+      "object_instance": "bowl_06",
+      "frame_index": 12,
+      "rgb": "tools/bowl_06/bowl_06_00000012_rgb.jpg",
+      "annotation": "tools/bowl_06/bowl_06_00000012_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "8b88100552e520b0be2a1c230f25f3bef71017bf5b759409c599ef7e57616435",
+      "annotation_sha256": "d64f5997b94530ec503478421a6e768b70d30447562be1b8a97113814647adf3",
+      "author_label_member": "train_novel_one_pick/bowl_06_00000012_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "bowl_07/00000244",
+      "object_instance": "bowl_07",
+      "frame_index": 244,
+      "rgb": "tools/bowl_07/bowl_07_00000244_rgb.jpg",
+      "annotation": "tools/bowl_07/bowl_07_00000244_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "83cd8c216e62998bf1cf4b7a61b6e01a6868683558e6ed19d5c5bafae5755b00",
+      "annotation_sha256": "faf04add3b99968344289532306f133cf577e6ced2a41ad6217bea776992cfc0",
+      "author_label_member": "train_novel_one_pick/bowl_07_00000244_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "bowl_08/00000218",
+      "object_instance": "bowl_08",
+      "frame_index": 218,
+      "rgb": "tools/bowl_08/bowl_08_00000218_rgb.jpg",
+      "annotation": "tools/bowl_08/bowl_08_00000218_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "5fe2c5b2d078ad5407ecc399fed75b8a2b363259f6c412fb195bd4a6b9af246e",
+      "annotation_sha256": "ebfbd421b1c859650e1c6cabc78a891c73a707b8c2bed882e4815a2636a76d6e",
+      "author_label_member": "train_novel_one_pick/bowl_08_00000218_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "bowl_09/00000142",
+      "object_instance": "bowl_09",
+      "frame_index": 142,
+      "rgb": "tools/bowl_09/bowl_09_00000142_rgb.jpg",
+      "annotation": "tools/bowl_09/bowl_09_00000142_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "5dab2e738e122b506c1ec302332bc58d84d907f0e1c4b26564acac5fec634c10",
+      "annotation_sha256": "88274346e072f9eea34fac3b6a42dbed84c1b3ea707244f9ac5e5fb71bc6a144",
+      "author_label_member": "train_novel_one_pick/bowl_09_00000142_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "bowl_10/00000383",
+      "object_instance": "bowl_10",
+      "frame_index": 383,
+      "rgb": "tools/bowl_10/bowl_10_00000383_rgb.jpg",
+      "annotation": "tools/bowl_10/bowl_10_00000383_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "b15db4b5b25e96b2ec81e85038ae8d97c5421e12af1084ce8f250bbc58923bca",
+      "annotation_sha256": "3152773979246b0feac3a3151724fa52c62f8fed17bb5ddadd3a86dd0f46f9fb",
+      "author_label_member": "train_novel_one_pick/bowl_10_00000383_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "hammer_01/00000033",
+      "object_instance": "hammer_01",
+      "frame_index": 33,
+      "rgb": "tools/hammer_01/hammer_01_00000033_rgb.jpg",
+      "annotation": "tools/hammer_01/hammer_01_00000033_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "06250ed67d7ba439aabba50e6aef81ea7b4f6c6b78168e8d33a117bbadcbb49d",
+      "annotation_sha256": "2ba0f452e15156bffe74ae982881fdec243ee99d821f2e54acbdb7d3f5dc9954",
+      "author_label_member": "train_novel_one_pick/hammer_01_00000033_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "hammer_02/00000203",
+      "object_instance": "hammer_02",
+      "frame_index": 203,
+      "rgb": "tools/hammer_02/hammer_02_00000203_rgb.jpg",
+      "annotation": "tools/hammer_02/hammer_02_00000203_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "9252ada50a30c557f63ba8353be441f9add454f8707f15355a8e88c0fe253970",
+      "annotation_sha256": "01d193e01b33c5c7a8b7028e99aeb1c1ae0abb78671ac3cc37b0cc7f0ede0ced",
+      "author_label_member": "train_novel_one_pick/hammer_02_00000203_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "hammer_03/00000093",
+      "object_instance": "hammer_03",
+      "frame_index": 93,
+      "rgb": "tools/hammer_03/hammer_03_00000093_rgb.jpg",
+      "annotation": "tools/hammer_03/hammer_03_00000093_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "6a3978ad45bedde60cedf0ea295b29dfe58409a7d953e4d2aa2a05c554d0043f",
+      "annotation_sha256": "1f91ee95ef0305788209868a0206011ee5f09fa7e2198ccb0fa1ffa4c2997c75",
+      "author_label_member": "train_novel_one_pick/hammer_03_00000093_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "hammer_04/00000014",
+      "object_instance": "hammer_04",
+      "frame_index": 14,
+      "rgb": "tools/hammer_04/hammer_04_00000014_rgb.jpg",
+      "annotation": "tools/hammer_04/hammer_04_00000014_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "60fd54c6e38e9923c2f9db254d2451701cad855004aa274ab29191540c66b22f",
+      "annotation_sha256": "8a3bb18a74ffe7220768b417eb0a6a842a49fe1775f3663d361345c4b561ebda",
+      "author_label_member": "train_novel_one_pick/hammer_04_00000014_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_01/00000035",
+      "object_instance": "knife_01",
+      "frame_index": 35,
+      "rgb": "tools/knife_01/knife_01_00000035_rgb.jpg",
+      "annotation": "tools/knife_01/knife_01_00000035_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "c6648aec1c3a1c21b7be73128e10f64c45b1737cc74e151ae78008c88c2bd408",
+      "annotation_sha256": "a28eb009475b3a7bb127a7b9057041ed37c5221cd3d3ede192e876e3d8189768",
+      "author_label_member": "train_novel_one_pick/knife_01_00000035_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_02/00000005",
+      "object_instance": "knife_02",
+      "frame_index": 5,
+      "rgb": "tools/knife_02/knife_02_00000005_rgb.jpg",
+      "annotation": "tools/knife_02/knife_02_00000005_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "c6872dc3989f7789b2ab532e03d0e335b03c2d42795cece1b90db97624ad8d43",
+      "annotation_sha256": "dfb4ae5891669cb699a5c44e2210ffbc97ce93a39beb138cfbfaeb48a3fc815c",
+      "author_label_member": "train_novel_one_pick/knife_02_00000005_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_03/00000175",
+      "object_instance": "knife_03",
+      "frame_index": 175,
+      "rgb": "tools/knife_03/knife_03_00000175_rgb.jpg",
+      "annotation": "tools/knife_03/knife_03_00000175_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "3e7aee10f9511e28f0179f2d3caa31444f0d2f34456d8fc85f4f7d8f9be9fa7b",
+      "annotation_sha256": "92f98002b426e8abdb4569aeb26b0f2f41d28bc718d0dc6f7a42e76c23ed0a50",
+      "author_label_member": "train_novel_one_pick/knife_03_00000175_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_04/00000230",
+      "object_instance": "knife_04",
+      "frame_index": 230,
+      "rgb": "tools/knife_04/knife_04_00000230_rgb.jpg",
+      "annotation": "tools/knife_04/knife_04_00000230_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "126596435067c638bb92408f97ef6f6e2b5f35740790d2ba6dd889e2479ec7cc",
+      "annotation_sha256": "08e4d2dafd879c0f3933dc366754f856a7cfeb05a1f4ecb549bee0b2174718fa",
+      "author_label_member": "train_novel_one_pick/knife_04_00000230_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_05/00000010",
+      "object_instance": "knife_05",
+      "frame_index": 10,
+      "rgb": "tools/knife_05/knife_05_00000010_rgb.jpg",
+      "annotation": "tools/knife_05/knife_05_00000010_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "9693ab80c4c5fafd052f254e79e75af853555b9881bfcaa184bc0ce87c2872cc",
+      "annotation_sha256": "6344371569a8ec2732d501d4c6f8b1d852c63d6f960f00eb6f75014b0f321496",
+      "author_label_member": "train_novel_one_pick/knife_05_00000010_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_06/00000130",
+      "object_instance": "knife_06",
+      "frame_index": 130,
+      "rgb": "tools/knife_06/knife_06_00000130_rgb.jpg",
+      "annotation": "tools/knife_06/knife_06_00000130_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "94449b5097b417997bd461a8cdcabec260a142e5ad771e268d32c1de389e2ff2",
+      "annotation_sha256": "12738fc9fe386c59820472254bc76536da5816c3f4b20b9d1f03f5e9238d6b7b",
+      "author_label_member": "train_novel_one_pick/knife_06_00000130_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_07/00000172",
+      "object_instance": "knife_07",
+      "frame_index": 172,
+      "rgb": "tools/knife_07/knife_07_00000172_rgb.jpg",
+      "annotation": "tools/knife_07/knife_07_00000172_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "fd430a37994d206cb34e96fc139c44fb7e931f4a5844129632fd3d111f948e63",
+      "annotation_sha256": "8ec3aa515897ebc0e6c76eafb2679717ed30a1692fdd47b4d5cf9cb309a30760",
+      "author_label_member": "train_novel_one_pick/knife_07_00000172_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_08/00000053",
+      "object_instance": "knife_08",
+      "frame_index": 53,
+      "rgb": "tools/knife_08/knife_08_00000053_rgb.jpg",
+      "annotation": "tools/knife_08/knife_08_00000053_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "88d71105bd0355996d8b1e1ba64dc0939ef1ece0f0c458185725c06f7bc52fe0",
+      "annotation_sha256": "31551046cb36b45578085b984eaf87cbaf676f4f08acd03745109c1c3689be45",
+      "author_label_member": "train_novel_one_pick/knife_08_00000053_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_09/00000088",
+      "object_instance": "knife_09",
+      "frame_index": 88,
+      "rgb": "tools/knife_09/knife_09_00000088_rgb.jpg",
+      "annotation": "tools/knife_09/knife_09_00000088_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "0ce1dcde5bb7b859e53e6b2dbac9665e30a3dabc65b605bdfc1caf0f60673099",
+      "annotation_sha256": "f1b2a90cfff6ce61282473d52c637068f3dbd69b057f67a41baeeac5c27ec787",
+      "author_label_member": "train_novel_one_pick/knife_09_00000088_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_10/00000122",
+      "object_instance": "knife_10",
+      "frame_index": 122,
+      "rgb": "tools/knife_10/knife_10_00000122_rgb.jpg",
+      "annotation": "tools/knife_10/knife_10_00000122_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "371b2741b091db80f92b14b849b884843bea563faba4eebb1fd85d9539496122",
+      "annotation_sha256": "fdf9877a4cbebd341699348b641406b296876dc436be3052b3b4732d8bd4fc70",
+      "author_label_member": "train_novel_one_pick/knife_10_00000122_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_11/00000035",
+      "object_instance": "knife_11",
+      "frame_index": 35,
+      "rgb": "tools/knife_11/knife_11_00000035_rgb.jpg",
+      "annotation": "tools/knife_11/knife_11_00000035_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "5415584da5e08d7463c62b328af8ab3254e4c7c6fedbe73a741a5133f3a25ceb",
+      "annotation_sha256": "c99d4492c7fd808ed20062c1e854aed42beb1443e7e5082e7cee7e1028cc6a77",
+      "author_label_member": "train_novel_one_pick/knife_11_00000035_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "knife_12/00000063",
+      "object_instance": "knife_12",
+      "frame_index": 63,
+      "rgb": "tools/knife_12/knife_12_00000063_rgb.jpg",
+      "annotation": "tools/knife_12/knife_12_00000063_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "7dc5e7eb1634f48c50f2b437558fe4c50ff0efa808cc09531e229102d1494196",
+      "annotation_sha256": "fe36bd7010a2c655d8518678ad94fb6ca980bc636ed78a86fe42f452dd99f161",
+      "author_label_member": "train_novel_one_pick/knife_12_00000063_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mallet_01/00000179",
+      "object_instance": "mallet_01",
+      "frame_index": 179,
+      "rgb": "tools/mallet_01/mallet_01_00000179_rgb.jpg",
+      "annotation": "tools/mallet_01/mallet_01_00000179_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "b240c00207ea992dd41309e5f5ddd74f46e0123d56b9fb9d618f76108c52a18b",
+      "annotation_sha256": "2f64321b2340b68be14ab57eae028f29eb692d962810718d65c56d8f422a694f",
+      "author_label_member": "train_novel_one_pick/mallet_01_00000179_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mallet_02/00000004",
+      "object_instance": "mallet_02",
+      "frame_index": 4,
+      "rgb": "tools/mallet_02/mallet_02_00000004_rgb.jpg",
+      "annotation": "tools/mallet_02/mallet_02_00000004_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "222d79814457976b2ddb9d2b7d8f1bb9ad8b393ad68286990c61494208202263",
+      "annotation_sha256": "e3203c7415af8135044b768ccbc282c5006bb9859541beda44f460c82d3b3f0d",
+      "author_label_member": "train_novel_one_pick/mallet_02_00000004_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mallet_03/00000032",
+      "object_instance": "mallet_03",
+      "frame_index": 32,
+      "rgb": "tools/mallet_03/mallet_03_00000032_rgb.jpg",
+      "annotation": "tools/mallet_03/mallet_03_00000032_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "9234a4aabc5666cdec237b1bc42ab517fe6c3b5bafe001cec8e95f16d9257cf1",
+      "annotation_sha256": "0c8f54baeeec9a1a372ab52023fa4b666bab9baedecae5bf24fddede3a0eb1e1",
+      "author_label_member": "train_novel_one_pick/mallet_03_00000032_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mallet_04/00000092",
+      "object_instance": "mallet_04",
+      "frame_index": 92,
+      "rgb": "tools/mallet_04/mallet_04_00000092_rgb.jpg",
+      "annotation": "tools/mallet_04/mallet_04_00000092_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "62f73a468726828595dde4d288e60247e78abd3ab314512eb2abd47aceef6f0b",
+      "annotation_sha256": "d290dde07ba1a5e6c060cdc1d79a3f2cd5607d2fb8c894d8436f363c506f3e89",
+      "author_label_member": "train_novel_one_pick/mallet_04_00000092_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_01/00000077",
+      "object_instance": "mug_01",
+      "frame_index": 77,
+      "rgb": "tools/mug_01/mug_01_00000077_rgb.jpg",
+      "annotation": "tools/mug_01/mug_01_00000077_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "c3156ae315c3c6282cb6769b1e3c9c8bba0e11c8bda0de2db2a2794d091a418f",
+      "annotation_sha256": "ec2c6d5a5baa0fb6ee38113f8131661e86369012d1df633f2a9d2b06cab63771",
+      "author_label_member": "train_novel_one_pick/mug_01_00000077_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_02/00000257",
+      "object_instance": "mug_02",
+      "frame_index": 257,
+      "rgb": "tools/mug_02/mug_02_00000257_rgb.jpg",
+      "annotation": "tools/mug_02/mug_02_00000257_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "8069d371e61d1c77f7d03858fceb82978f265f05d7a31038af9dce0957a3255d",
+      "annotation_sha256": "dc4fcfc8942d47e5ac77f6b9231686bf9c642678ff7863adc59b1084443bb230",
+      "author_label_member": "train_novel_one_pick/mug_02_00000257_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_03/00000010",
+      "object_instance": "mug_03",
+      "frame_index": 10,
+      "rgb": "tools/mug_03/mug_03_00000010_rgb.jpg",
+      "annotation": "tools/mug_03/mug_03_00000010_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "e1bf429aed3177a50c76dd0bf6b0141cd15392c64aec3df7a8b3d2a8de8388fd",
+      "annotation_sha256": "31f418e39db6410701f48dbf84098981791ebbbf2220c334316ef931e5984ed2",
+      "author_label_member": "train_novel_one_pick/mug_03_00000010_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_04/00000160",
+      "object_instance": "mug_04",
+      "frame_index": 160,
+      "rgb": "tools/mug_04/mug_04_00000160_rgb.jpg",
+      "annotation": "tools/mug_04/mug_04_00000160_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "c42830c049c5bba5519baf4fd9ffdabd700cb4e421ce66f7c91ea2cb94b9502b",
+      "annotation_sha256": "57c530a14f444d8c06a922115868fbdb04ba32ce0affaadbd19e0ef9b9ba1e17",
+      "author_label_member": "train_novel_one_pick/mug_04_00000160_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_05/00000055",
+      "object_instance": "mug_05",
+      "frame_index": 55,
+      "rgb": "tools/mug_05/mug_05_00000055_rgb.jpg",
+      "annotation": "tools/mug_05/mug_05_00000055_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "23de4f29d99bc5e8779dc99d2526066de7191525d5966713646c45abb9205bcf",
+      "annotation_sha256": "44dfea92f71971d72a42b1494e4ba9a835b66f6552ec84243655a045797b241d",
+      "author_label_member": "train_novel_one_pick/mug_05_00000055_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_06/00000007",
+      "object_instance": "mug_06",
+      "frame_index": 7,
+      "rgb": "tools/mug_06/mug_06_00000007_rgb.jpg",
+      "annotation": "tools/mug_06/mug_06_00000007_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "cc3a6fa3c39637a7ffe60256ceea69b98b81faa162802cb3041bd2b3ae533c27",
+      "annotation_sha256": "ac924434b322cd206677176270ab30b7fc0e76942556fa22cf47d8d46c06abb8",
+      "author_label_member": "train_novel_one_pick/mug_06_00000007_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_07/00000004",
+      "object_instance": "mug_07",
+      "frame_index": 4,
+      "rgb": "tools/mug_07/mug_07_00000004_rgb.jpg",
+      "annotation": "tools/mug_07/mug_07_00000004_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "246c6a6fa20d0e1bba0b7fd5fece18e07880961bb3a949863be85a6be9f1d5f9",
+      "annotation_sha256": "0af8700e59e09d72889960b73e2ebc6410f73d106962f50666a62384de676032",
+      "author_label_member": "train_novel_one_pick/mug_07_00000004_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_08/00000067",
+      "object_instance": "mug_08",
+      "frame_index": 67,
+      "rgb": "tools/mug_08/mug_08_00000067_rgb.jpg",
+      "annotation": "tools/mug_08/mug_08_00000067_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "a86d1f6de2ebb8324ae3b1fd838998ef94d91df5f28b9ddb2a3ae2b7aaf96aab",
+      "annotation_sha256": "c0a84d88fb3ccc96d50fcdbbe0e746fb53e725949f05777f49d9344b36f4e5ac",
+      "author_label_member": "train_novel_one_pick/mug_08_00000067_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_09/00000034",
+      "object_instance": "mug_09",
+      "frame_index": 34,
+      "rgb": "tools/mug_09/mug_09_00000034_rgb.jpg",
+      "annotation": "tools/mug_09/mug_09_00000034_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "85927aa4857ff1ac368af0b15f85a845494b439bc414e6206324ad8012d6d62b",
+      "annotation_sha256": "4e1f6524fca6f0da8bd960d1c408f8dcd6599975e6e3a1fd069ee83ececb7fe0",
+      "author_label_member": "train_novel_one_pick/mug_09_00000034_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_10/00000001",
+      "object_instance": "mug_10",
+      "frame_index": 1,
+      "rgb": "tools/mug_10/mug_10_00000001_rgb.jpg",
+      "annotation": "tools/mug_10/mug_10_00000001_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "4033523be74b2c064918e2a770178048ca5cc5f12172e092b510d59c56aa68a2",
+      "annotation_sha256": "2889893cc4e6e938d6e20b9db9393cc7c8d76821946fd79d064ec72260087936",
+      "author_label_member": "train_novel_one_pick/mug_10_00000001_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_11/00000163",
+      "object_instance": "mug_11",
+      "frame_index": 163,
+      "rgb": "tools/mug_11/mug_11_00000163_rgb.jpg",
+      "annotation": "tools/mug_11/mug_11_00000163_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "4f26d7e9ae08b94b180513b88520aeda59079572e272b3905567bbd2887ee001",
+      "annotation_sha256": "ccbc7bfc09111897aad75233ec35fa226e0dc5187f1b9f7afe284bfc18396414",
+      "author_label_member": "train_novel_one_pick/mug_11_00000163_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_12/00000181",
+      "object_instance": "mug_12",
+      "frame_index": 181,
+      "rgb": "tools/mug_12/mug_12_00000181_rgb.jpg",
+      "annotation": "tools/mug_12/mug_12_00000181_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "d5c843d2c3f1b37aff1085bad4498159f98bf4d581e6d28be5077bb09ac042f0",
+      "annotation_sha256": "f1f95ca24cd77a9523a3f56018e7d9c0b53ee2af7eed886dbe487fbd279e5629",
+      "author_label_member": "train_novel_one_pick/mug_12_00000181_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_13/00000023",
+      "object_instance": "mug_13",
+      "frame_index": 23,
+      "rgb": "tools/mug_13/mug_13_00000023_rgb.jpg",
+      "annotation": "tools/mug_13/mug_13_00000023_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "c79a0e36e93cb09cc9e748572e1af1e96ec86586c85e73c9c1779b5ab44ad16e",
+      "annotation_sha256": "6534df0d51abb7f7241900f7f6d5c61a62cd1732e5e694139bf6682f89176f21",
+      "author_label_member": "train_novel_one_pick/mug_13_00000023_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_14/00000094",
+      "object_instance": "mug_14",
+      "frame_index": 94,
+      "rgb": "tools/mug_14/mug_14_00000094_rgb.jpg",
+      "annotation": "tools/mug_14/mug_14_00000094_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "7937851c018769e8cf98a8b52ee351a3545d8b91321428e2fa9cd74bf2d4b795",
+      "annotation_sha256": "9c9aa51a65ebf21feed2b2bbf1d7adcedafac9e8930ce7750a4d63bde0c7bab2",
+      "author_label_member": "train_novel_one_pick/mug_14_00000094_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_15/00000003",
+      "object_instance": "mug_15",
+      "frame_index": 3,
+      "rgb": "tools/mug_15/mug_15_00000003_rgb.jpg",
+      "annotation": "tools/mug_15/mug_15_00000003_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "3a6a1044d12b08d6e608ef4365a5b203aee8ffdf67af6d05048e4a7262af0f09",
+      "annotation_sha256": "94cba12892876431971d3516e41aeb662e56588862661887dcc8269027badcfd",
+      "author_label_member": "train_novel_one_pick/mug_15_00000003_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_16/00000008",
+      "object_instance": "mug_16",
+      "frame_index": 8,
+      "rgb": "tools/mug_16/mug_16_00000008_rgb.jpg",
+      "annotation": "tools/mug_16/mug_16_00000008_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "86091d5eac3e4e5044a0361e9ce8131d22586f6235f9eff466893201f706ddda",
+      "annotation_sha256": "44ea85ddbc3f7e7c361345e6fb53c91c348bdb0cae4e69b26c5665aed15c8c12",
+      "author_label_member": "train_novel_one_pick/mug_16_00000008_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_17/00000034",
+      "object_instance": "mug_17",
+      "frame_index": 34,
+      "rgb": "tools/mug_17/mug_17_00000034_rgb.jpg",
+      "annotation": "tools/mug_17/mug_17_00000034_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "d150dbdce1bbee9dbe8d73f011272d83e46b151cb887ab74514c5d1d4dc79686",
+      "annotation_sha256": "576ed3ca92dc65f0a63f801f007e759a51f95064f42c340de8651c36f72a4c6f",
+      "author_label_member": "train_novel_one_pick/mug_17_00000034_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_18/00000091",
+      "object_instance": "mug_18",
+      "frame_index": 91,
+      "rgb": "tools/mug_18/mug_18_00000091_rgb.jpg",
+      "annotation": "tools/mug_18/mug_18_00000091_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "2f3d72150121ccd8052c8ecf05435ed828e2303210a35b2268582e23e4d386f1",
+      "annotation_sha256": "0c7b5fa5f575179ce91b48427471677f808c31a8ce0e83445c98c40c2d037d65",
+      "author_label_member": "train_novel_one_pick/mug_18_00000091_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_19/00000109",
+      "object_instance": "mug_19",
+      "frame_index": 109,
+      "rgb": "tools/mug_19/mug_19_00000109_rgb.jpg",
+      "annotation": "tools/mug_19/mug_19_00000109_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "2909dd48c1f8c19029360cf7365871ac46544f688e4f5448402b84eb0c2ea31b",
+      "annotation_sha256": "bcf036241925253bacffa06723361f99ac22a5e24e86395bc724618e839d764e",
+      "author_label_member": "train_novel_one_pick/mug_19_00000109_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "mug_20/00000012",
+      "object_instance": "mug_20",
+      "frame_index": 12,
+      "rgb": "tools/mug_20/mug_20_00000012_rgb.jpg",
+      "annotation": "tools/mug_20/mug_20_00000012_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "2291045846ee0fbc615ca2d1b53151a01edaa41087bc771dd031f6148bec6136",
+      "annotation_sha256": "153719f6e4a4a13f9868fd02b2f6513c8d91932802931665e965fb2902de9fbb",
+      "author_label_member": "train_novel_one_pick/mug_20_00000012_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "scissors_01/00000003",
+      "object_instance": "scissors_01",
+      "frame_index": 3,
+      "rgb": "tools/scissors_01/scissors_01_00000003_rgb.jpg",
+      "annotation": "tools/scissors_01/scissors_01_00000003_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "7bafd514aabf65c575548c890a8727943f220c62e1e2e0b8c4714ea10883f218",
+      "annotation_sha256": "461652b1e64ca55772768f0adecbceb18e7571f5ba3e5b7c4a2c2b27b5f2689c",
+      "author_label_member": "train_novel_one_pick/scissors_01_00000003_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "scissors_02/00000016",
+      "object_instance": "scissors_02",
+      "frame_index": 16,
+      "rgb": "tools/scissors_02/scissors_02_00000016_rgb.jpg",
+      "annotation": "tools/scissors_02/scissors_02_00000016_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "357739412f2a39e3e23fb0226c915158a8296278ab3e108ebc57cdd1a9cea364",
+      "annotation_sha256": "5676b06b09413b547617b1f14757e8558089204daa16f4e7decdb3d04984f9e2",
+      "author_label_member": "train_novel_one_pick/scissors_02_00000016_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "scissors_03/00000165",
+      "object_instance": "scissors_03",
+      "frame_index": 165,
+      "rgb": "tools/scissors_03/scissors_03_00000165_rgb.jpg",
+      "annotation": "tools/scissors_03/scissors_03_00000165_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "d7f03304639eba72377adf01301eb1c77ad4c7331c7112f29e3a69ee6dafd358",
+      "annotation_sha256": "bc0005f256b34fd34883637db4441132646e608f44a2540139a54b469b870547",
+      "author_label_member": "train_novel_one_pick/scissors_03_00000165_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "scissors_04/00000109",
+      "object_instance": "scissors_04",
+      "frame_index": 109,
+      "rgb": "tools/scissors_04/scissors_04_00000109_rgb.jpg",
+      "annotation": "tools/scissors_04/scissors_04_00000109_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "b74f8e0e59d71f1063a8c908b23fdafdbfff1b20b2a2b9ca0ea365f80ad0d206",
+      "annotation_sha256": "7db89e2253b864bbabc3de8ea8a6a59398b30b552af5cf3df34d41f387a61930",
+      "author_label_member": "train_novel_one_pick/scissors_04_00000109_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "scissors_05/00000219",
+      "object_instance": "scissors_05",
+      "frame_index": 219,
+      "rgb": "tools/scissors_05/scissors_05_00000219_rgb.jpg",
+      "annotation": "tools/scissors_05/scissors_05_00000219_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "cc950d632e9649812091b584399d9286457a19b38a883363c48a3af3563a9ee9",
+      "annotation_sha256": "78b8c2a2453506335b1a93f7ad3ddb242878292a8a32a8332164abed4c5ae27e",
+      "author_label_member": "train_novel_one_pick/scissors_05_00000219_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "scissors_06/00000032",
+      "object_instance": "scissors_06",
+      "frame_index": 32,
+      "rgb": "tools/scissors_06/scissors_06_00000032_rgb.jpg",
+      "annotation": "tools/scissors_06/scissors_06_00000032_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "a6ac6b4118eb9d4d522372f9ae6d7a011bae94ed5f3c36b583b20b087550abce",
+      "annotation_sha256": "b1790ed62d4105514c255323b32926f204d2ebfd12603012aa9828306037cc91",
+      "author_label_member": "train_novel_one_pick/scissors_06_00000032_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "scissors_07/00000061",
+      "object_instance": "scissors_07",
+      "frame_index": 61,
+      "rgb": "tools/scissors_07/scissors_07_00000061_rgb.jpg",
+      "annotation": "tools/scissors_07/scissors_07_00000061_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "441db153e84280e2f657d757e50f7fac2a2d8dce612fe1f93b5224b4fb467c51",
+      "annotation_sha256": "245a6448346c504e062cf1be8f02eeb81c9864775cc33c7e37861ba464e65bc1",
+      "author_label_member": "train_novel_one_pick/scissors_07_00000061_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "scissors_08/00000009",
+      "object_instance": "scissors_08",
+      "frame_index": 9,
+      "rgb": "tools/scissors_08/scissors_08_00000009_rgb.jpg",
+      "annotation": "tools/scissors_08/scissors_08_00000009_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "dd3cf68e9b0ca6650720d12b8f44215e0a35c8a35bbda24d891a0cfdf8820800",
+      "annotation_sha256": "6d93b9f474ea48cf3071e9472bd8d0d27b1ade0723a322e309aaf508cbf524ac",
+      "author_label_member": "train_novel_one_pick/scissors_08_00000009_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_01/00000010",
+      "object_instance": "spoon_01",
+      "frame_index": 10,
+      "rgb": "tools/spoon_01/spoon_01_00000010_rgb.jpg",
+      "annotation": "tools/spoon_01/spoon_01_00000010_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "3da5a1215026f45ea88ed397df2803e7dfb198f5414d8cd42b2aa7ffe9e2db51",
+      "annotation_sha256": "a0d5792bfa5163fd597aae42c1f92efc262e21ce4af3d39982d87f51a3fa08ea",
+      "author_label_member": "train_novel_one_pick/spoon_01_00000010_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_02/00000047",
+      "object_instance": "spoon_02",
+      "frame_index": 47,
+      "rgb": "tools/spoon_02/spoon_02_00000047_rgb.jpg",
+      "annotation": "tools/spoon_02/spoon_02_00000047_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "7103a63e39096cfdcd201f4a1a40d289ae488f75b4dd81537d3e9974790b6cab",
+      "annotation_sha256": "f1052c1da5e6bca9e94dc27e36e033c00970e640b8c84eec9e636fccb9520b86",
+      "author_label_member": "train_novel_one_pick/spoon_02_00000047_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_03/00000221",
+      "object_instance": "spoon_03",
+      "frame_index": 221,
+      "rgb": "tools/spoon_03/spoon_03_00000221_rgb.jpg",
+      "annotation": "tools/spoon_03/spoon_03_00000221_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "cf8bbeac5108515bc1778c68b72aee64740a3361406c93c7389c89ff7bcc4899",
+      "annotation_sha256": "b8ec218ab72e91a4480448ed63a06ea521609c47b62d31859643509a7f7a7c53",
+      "author_label_member": "train_novel_one_pick/spoon_03_00000221_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_04/00000008",
+      "object_instance": "spoon_04",
+      "frame_index": 8,
+      "rgb": "tools/spoon_04/spoon_04_00000008_rgb.jpg",
+      "annotation": "tools/spoon_04/spoon_04_00000008_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "bacc97a2a8334edb50ddf462b782021b9d770943d2195c714a34f50db1994619",
+      "annotation_sha256": "b016c12050dcf2c3dd544b343c78e8e3c9cc7f0fb360f3a8270ed283e21b1e37",
+      "author_label_member": "train_novel_one_pick/spoon_04_00000008_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_05/00000244",
+      "object_instance": "spoon_05",
+      "frame_index": 244,
+      "rgb": "tools/spoon_05/spoon_05_00000244_rgb.jpg",
+      "annotation": "tools/spoon_05/spoon_05_00000244_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "2f6ba20349b20e66cb4992e9ede6db81ea54145a9f94f1f5c6e5bd7ead427d39",
+      "annotation_sha256": "e452195d6a37d1b9b22b6c8e284b7a0674f08097d917766d0b203ca438bae2fb",
+      "author_label_member": "train_novel_one_pick/spoon_05_00000244_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_06/00000123",
+      "object_instance": "spoon_06",
+      "frame_index": 123,
+      "rgb": "tools/spoon_06/spoon_06_00000123_rgb.jpg",
+      "annotation": "tools/spoon_06/spoon_06_00000123_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "1cc042411dbebd68fa830df959decdef17ffa66a8449d734051ec3b929146ad8",
+      "annotation_sha256": "42a05ca27d57a0086bf77cebed6cb23a747cc91abb7dec2ca23476172e7e1516",
+      "author_label_member": "train_novel_one_pick/spoon_06_00000123_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_07/00000157",
+      "object_instance": "spoon_07",
+      "frame_index": 157,
+      "rgb": "tools/spoon_07/spoon_07_00000157_rgb.jpg",
+      "annotation": "tools/spoon_07/spoon_07_00000157_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "44102735447185d96371561b4128d7c78e593c2074f739714a64fb6b51851910",
+      "annotation_sha256": "d81d953e50018e1d36d10b6bca95e3a06ec5580c3df847ae59bd061a83247c4e",
+      "author_label_member": "train_novel_one_pick/spoon_07_00000157_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_08/00000105",
+      "object_instance": "spoon_08",
+      "frame_index": 105,
+      "rgb": "tools/spoon_08/spoon_08_00000105_rgb.jpg",
+      "annotation": "tools/spoon_08/spoon_08_00000105_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "1413ea36cab996a49bbab9ccfb7d67380e95ab33841c68e3ce4534f52ee79a8e",
+      "annotation_sha256": "4e7cbd0d06c45c29509ab760b77c4a9831883ce9a1429c323aba264350f29606",
+      "author_label_member": "train_novel_one_pick/spoon_08_00000105_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_09/00000025",
+      "object_instance": "spoon_09",
+      "frame_index": 25,
+      "rgb": "tools/spoon_09/spoon_09_00000025_rgb.jpg",
+      "annotation": "tools/spoon_09/spoon_09_00000025_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "d23d1e967865c54dd816805bea86d9f013578a0afb22e2c3c4613b1cac29b876",
+      "annotation_sha256": "5d39599759afc83faeb96c9309aa66c2711e0ccf0abec2402df4acbcae11d010",
+      "author_label_member": "train_novel_one_pick/spoon_09_00000025_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "spoon_10/00000196",
+      "object_instance": "spoon_10",
+      "frame_index": 196,
+      "rgb": "tools/spoon_10/spoon_10_00000196_rgb.jpg",
+      "annotation": "tools/spoon_10/spoon_10_00000196_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "e5be6ab0b3e2877b368b3084dcb30b5ecf2b6593c0b4fa9293a59ce813d73fd5",
+      "annotation_sha256": "36585a3cb7d7420454a3a7e66987e4e245b384d49134760af4810d895d31ab30",
+      "author_label_member": "train_novel_one_pick/spoon_10_00000196_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "turner_01/00000050",
+      "object_instance": "turner_01",
+      "frame_index": 50,
+      "rgb": "tools/turner_01/turner_01_00000050_rgb.jpg",
+      "annotation": "tools/turner_01/turner_01_00000050_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "efc3e5b53c144f7177a3ced80648e6fb9e57198f40607c84a69aefd91dbcfd06",
+      "annotation_sha256": "2223a228c3068a8351af1a2c5da906accf2e14ecdd00463304d8aff87b9f7a39",
+      "author_label_member": "train_novel_one_pick/turner_01_00000050_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "turner_02/00000014",
+      "object_instance": "turner_02",
+      "frame_index": 14,
+      "rgb": "tools/turner_02/turner_02_00000014_rgb.jpg",
+      "annotation": "tools/turner_02/turner_02_00000014_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "260080d321ddc547f45d1cc387bfaeacecda0df2432c7d0a2db659ee23b6149c",
+      "annotation_sha256": "9e3c7193c99e39fd360b607c8fe6000f7ede8629adf8e1ae3f8556a7abe3e14f",
+      "author_label_member": "train_novel_one_pick/turner_02_00000014_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "turner_03/00000053",
+      "object_instance": "turner_03",
+      "frame_index": 53,
+      "rgb": "tools/turner_03/turner_03_00000053_rgb.jpg",
+      "annotation": "tools/turner_03/turner_03_00000053_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "01771cb10dcab07724ae4bfced9841862a1cf3358e479f3a4929ad448d833997",
+      "annotation_sha256": "1915c83fc84c725c2fb464d5ee36997fa80f752ff125a48f3f0bee803aea2e95",
+      "author_label_member": "train_novel_one_pick/turner_03_00000053_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "turner_04/00000239",
+      "object_instance": "turner_04",
+      "frame_index": 239,
+      "rgb": "tools/turner_04/turner_04_00000239_rgb.jpg",
+      "annotation": "tools/turner_04/turner_04_00000239_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "fb13cfb9be150b8cf4185b5559425185d8aa1295e047c73d952069cad18be9c8",
+      "annotation_sha256": "bfe9c4c234e848013dba899c096246efb1a00972de9e861274e23e64d1b6d181",
+      "author_label_member": "train_novel_one_pick/turner_04_00000239_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "turner_05/00000058",
+      "object_instance": "turner_05",
+      "frame_index": 58,
+      "rgb": "tools/turner_05/turner_05_00000058_rgb.jpg",
+      "annotation": "tools/turner_05/turner_05_00000058_label.mat",
+      "gt_type": "manual",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "fddf407ff4581f933ba3bd21ced2c1527d5483cb6fbbcf7f208ea0e7215c6225",
+      "annotation_sha256": "ef7dadfd9960d914256930ecb85a0ee10705c84bb1e81f82da485aa95d3bd8fb",
+      "author_label_member": "train_novel_one_pick/turner_05_00000058_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "turner_06/00000104",
+      "object_instance": "turner_06",
+      "frame_index": 104,
+      "rgb": "tools/turner_06/turner_06_00000104_rgb.jpg",
+      "annotation": "tools/turner_06/turner_06_00000104_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "687900eb6cbe7d40995fb30810f7fb3f0d1b02cc9f2f8aec2c7e785a911f282f",
+      "annotation_sha256": "896432af404fccd69710e9b3eb245428a1d7aff0f272b968707d3b5bf6fbf2fe",
+      "author_label_member": "train_novel_one_pick/turner_06_00000104_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "turner_07/00000215",
+      "object_instance": "turner_07",
+      "frame_index": 215,
+      "rgb": "tools/turner_07/turner_07_00000215_rgb.jpg",
+      "annotation": "tools/turner_07/turner_07_00000215_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "4a99ce0839cca049bb65626f58948946742f4c4ad075bb9e63c1be23c8d50ec7",
+      "annotation_sha256": "e2f168ff0eb975cc04def324599d96aa35b9dba96ae59afee10df85229f8a2e4",
+      "author_label_member": "train_novel_one_pick/turner_07_00000215_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    },
+    {
+      "sample_id": "turner_08/00000263",
+      "object_instance": "turner_08",
+      "frame_index": 263,
+      "rgb": "tools/turner_08/turner_08_00000263_rgb.jpg",
+      "annotation": "tools/turner_08/turner_08_00000263_label.mat",
+      "gt_type": "automatic",
+      "size_wh": [
+        640,
+        480
+      ],
+      "rgb_sha256": "4edb9d6646dcbc74e9a7b56814dc1772bc0c9f4cfb7851257cf2ad0df8ed2ddb",
+      "annotation_sha256": "ef8128ad86c5d54dbafd162cdf8f65b1f9bfc018b2be10c34d91524cdd9cc0b4",
+      "author_label_member": "train_novel_one_pick/turner_08_00000263_label.png",
+      "author_rgb_pixels_match": true,
+      "split": "novel/train"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Linux x86_64; observed working versions. PyTorch is installed separately by scripts/setup.sh.
+-c constraints-valen.txt
+Pillow==11.3.0
+accelerate==1.11.0
+av==16.1.0
+einops==0.8.2
+flash-linear-attention==0.5.2
+fonttools==4.64.0
+matplotlib==3.10.5
+numpy==1.26.4
+opencv-python==4.11.0.86
+peft==0.18.1
+safetensors==0.6.2
+scipy==1.17.1
+transformers==5.4.0

@@ -1,0 +1,17 @@
+{
+  "dataset_root": "data/UMD/part-affordance-dataset",
+  "definitions": "configs/umd_affordances.json",
+  "output_dir": "outputs/umd_gt_label_viewer",
+  "manifests": [
+    {
+      "path": "data/UMD/manifests/umd_novel_test.jsonl",
+      "partition": "test",
+      "expected_samples": 2661
+    },
+    {
+      "path": "data/UMD/manifests/ooal_novel_train_76.jsonl",
+      "partition": "train",
+      "expected_samples": 76
+    }
+  ]
+}

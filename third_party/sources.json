@@ -1,0 +1,12 @@
+{
+  "PartGLEE": {
+    "source": "https://github.com/ProvenceStar/PartGLEE",
+    "revision": "8c6b83e0be076e8fe640943096059ee5c180de0e",
+    "path": "third_party/PartGLEE"
+  },
+  "Valen-4B": {
+    "source": "https://huggingface.co/Valen-Team/Valen-4B",
+    "revision": "22366059194719ad8c4270567569e1d559491fa3",
+    "path": "models/valen"
+  }
+}

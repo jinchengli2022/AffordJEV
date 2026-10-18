@@ -1,0 +1,23 @@
+{
+  "model_id": "hqking/affordance-r1",
+  "adapter": null,
+  "image_side": 840,
+  "dtype": "bfloat16",
+  "max_new_tokens": 1024,
+  "seed": 42,
+  "temperature": 0,
+  "max_model_len": 4096,
+  "max_num_seqs": 21,
+  "image_batch": 3,
+  "gpu_memory_utilization": 0.83,
+  "num_threads": 4,
+  "sam_config": "configs/sam2/sam2_hiera_l.yaml",
+  "sam_multimask": true,
+  "mask_threshold": 0,
+  "overlap_rule": "maximum positive SAM2 pixel logit; exact ties use lower UMD class ID",
+  "protocol": "UMD novel/test manual frames; original dominant GT; all seven classes queried on every RGB; known object category supplied as requested; no training examples, masks or GT function presence in inference; whole-object prediction allowed",
+  "prompt": "verbatim official QUESTION_TEMPLATE, Answer example and UMD category/action query; no added functional definitions or rejection instructions",
+  "category_input": "UMD object category from dataset instance name; explicitly provided, not inferred by the baseline",
+  "query_selection": "all seven native classes, including wrap-grasp; differs from the author's category-specific two-action map to align seven-class evaluation",
+  "official_source": "https://github.com/hq-King/Affordance-R1/blob/9471404158d3baa0e6722c10c7a8cdcca5022efa/zero_shot.py"
+}

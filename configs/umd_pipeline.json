@@ -1,0 +1,40 @@
+{
+  "protocol": "umd_dominant_manual_rgb_only",
+  "foreground": {
+    "minimum_object_score": 0.01,
+    "minimum_object_pixels": 64,
+    "selection": "central_complete_object",
+    "center_sigma": 0.65,
+    "border_penalty": 0.1,
+    "crop_padding_fraction": 0.1,
+    "background_rgb": 127
+  },
+  "partition": {
+    "max_regions": 6,
+    "minimum_quality": 0.02,
+    "minimum_component_pixels": 64,
+    "minimum_component_fraction": 0.03,
+    "whole_object_fraction": null,
+    "specificity_exponent": 0.5
+  },
+  "valen": {
+    "execution": "shared_state",
+    "attn_implementation": "sdpa",
+    "temperature": 1.0,
+    "include_region_sheet": true,
+    "save_compiled_inputs": true
+  },
+  "vocabulary": {
+    "objects": [
+      "bowl", "cup", "hammer", "knife", "ladle", "mallet", "mug", "pot",
+      "saw", "scissors", "scoop", "shears", "shovel", "spoon",
+      "meat tenderizer", "trowel", "spatula"
+    ],
+    "parts": [
+      "handle", "grip", "finger ring", "blade", "cutting edge", "shaft",
+      "head", "striking face", "interior surface", "exterior surface",
+      "rim", "base", "neck", "flat working surface", "concave working surface",
+      "jaw", "support frame", "joint"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+UMDMajorityUI is a renamed UI-specific subset of Noto Sans CJK SC, distributed under the bundled SIL Open Font License. Generated once for this viewer; rebuilding the export does not require fontTools or the original font.
