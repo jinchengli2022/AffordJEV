@@ -1,0 +1,43 @@
+{
+  "protocol": "umd_dominant_manual_rgb_only",
+  "vocabulary": {"objects": ["object"], "parts": ["part"]},
+  "foreground": {
+    "minimum_object_score": 0.01,
+    "minimum_object_pixels": 64,
+    "selection": "central_complete_object",
+    "center_sigma": 0.65,
+    "border_penalty": 0.1,
+    "crop_padding_fraction": 0.1,
+    "background_rgb": 127
+  },
+  "foreground_selector": {
+    "method": "interior_point_union",
+    "group_size": 1,
+    "minimum_yes_probability": 0.96,
+    "minimum_fragment_pixels": 512,
+    "duplicates": "identical_binary_pixels_only",
+    "no_target": "empty_prediction",
+    "render": "full_rgb_and_single_interior_point"
+  },
+  "partition": {
+    "max_regions": 6,
+    "minimum_quality": 0.02,
+    "minimum_component_pixels": 64,
+    "minimum_component_fraction": 0.03,
+    "whole_object_fraction": null,
+    "specificity_exponent": 0.5
+  },
+  "valen": {
+    "execution": "shared_state",
+    "attn_implementation": "sdpa",
+    "temperature": 1.0,
+    "include_region_sheet": true,
+    "save_compiled_inputs": true,
+    "save_compiled_tensors": false
+  },
+  "functional_method": "centroid",
+  "comparisons": {
+    "outline_run": "outputs/umd_valen_foreground_20261018/full",
+    "point_union_run": "outputs/umd_valen_point_union_20261019/smoke"
+  }
+}

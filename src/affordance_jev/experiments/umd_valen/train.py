@@ -46,24 +46,29 @@ def compile_records(model,config,output,rank):
         raise ValueError('Expected exactly the 76 original training instances')
     states=[]
     for i,row in enumerate(rows):
-        compiler=model.make_compiler(media_root=row['media_root'],execution='shared_state')
-        state=compiler.compile(row,labeled_only=True)
-        if not state.questions or any(q.target is None for q in state.questions):
-            raise ValueError(f'Missing training target: {row["sample_id"]}')
-        # Labels may select supervised readouts, but must never alter input tensors.
-        unlabeled=compiler.compile({'request':row['request']})
-        if state.inputs.keys()!=unlabeled.inputs.keys() or any(
-                not torch.equal(v,unlabeled.inputs[k]) for k,v in state.inputs.items()):
-            raise AssertionError('Targets leaked into compiled model inputs')
-        states.append(state)
+        group=[]
+        for record in row.get('operations',[row]):
+            compiler=model.make_compiler(media_root=record['media_root'],execution='shared_state')
+            state=compiler.compile(record,labeled_only=True)
+            if not state.questions or any(q.target is None for q in state.questions):
+                raise ValueError(f'Missing training target: {row["sample_id"]}')
+            # Labels may select supervised readouts, but must never alter input tensors.
+            unlabeled=compiler.compile({'request':record['request']})
+            if state.inputs.keys()!=unlabeled.inputs.keys() or any(
+                    not torch.equal(v,unlabeled.inputs[k]) for k,v in state.inputs.items()):
+                raise AssertionError('Targets leaked into compiled model inputs')
+            group.append(state)
+        if not group: raise ValueError(f'Empty training image: {row["sample_id"]}')
+        states.append(group)
     if rank==0:
         write(output/'compiled_training_audit.json',{
             'records_sha256':sha(config['records']),'images':len(rows),
-            'regions':sum(len(s.questions) for s in states),
-            'max_input_tokens':max(s.compute_tokens for s in states),
+            'regions':sum(len(s.questions) for group in states for s in group),
+            'max_input_tokens':max(s.compute_tokens for group in states for s in group),
+            'operations_per_image':[len(group) for group in states],
             'targets_do_not_change_inputs':True,
             'sample_ids':[r['sample_id'] for r in rows],
-            'input_tokens':[s.compute_tokens for s in states]})
+            'input_tokens':[[s.compute_tokens for s in group] for group in states]})
     return states
 
 
@@ -148,8 +153,8 @@ def train(config,stage,smoke_steps=0):
         if world!=1: raise ValueError('Head warmup uses one GPU with cached frozen features')
         features=[]
         with torch.no_grad():
-            for i,state in enumerate(states,1):
-                features.append(model.extract_state_features(state))
+            for i,group in enumerate(states,1):
+                features.append([model.extract_state_features(state) for state in group])
                 if i%10==0 or i==len(states): print(f'FEATURES {i}/{len(states)}',flush=True)
         optimizer=torch.optim.AdamW(model.head.parameters(),lr=config['head_learning_rate'],weight_decay=config['weight_decay'])
         steps=smoke_steps or config['head_steps']
@@ -159,8 +164,8 @@ def train(config,stage,smoke_steps=0):
             optimizer.zero_grad(set_to_none=True)
             values=[]
             for index in order[(step-1)*batch:step*batch]:
-                logits=[model.score_features(f) for f in features[index]]
-                loss=loss_for(logits,states[index])
+                loss=torch.stack([loss_for([model.score_features(f) for f in fs],state)
+                    for fs,state in zip(features[index],states[index])]).mean()
                 (loss/batch).backward()
                 values.append(float(loss.detach()))
             torch.nn.utils.clip_grad_norm_(model.head.parameters(),config['gradient_clip_norm'],error_if_nonfinite=True)
@@ -200,7 +205,7 @@ def train(config,stage,smoke_steps=0):
     accumulate=batch//world
     order=schedule(len(states),steps*batch,config['seed']+1)
     if smoke_steps:
-        biggest=max(range(len(states)),key=lambda i:states[i].compute_tokens)
+        biggest=max(range(len(states)),key=lambda i:max(s.compute_tokens for s in states[i]))
         order=[biggest]*len(order)
     torch.cuda.reset_peak_memory_stats()
     for step in range(1,steps+1):
@@ -209,12 +214,15 @@ def train(config,stage,smoke_steps=0):
         loss_value=torch.zeros((),device=device)
         for micro in range(accumulate):
             index=order[(step-1)*batch+micro*world+rank]
-            sync=network.no_sync() if world>1 and micro<accumulate-1 else nullcontext()
-            with sync:
-                loss=network(states[index])
-                if not torch.isfinite(loss): raise FloatingPointError(f'Nonfinite loss on {index}')
-                (loss/accumulate).backward()
-            loss_value+=loss.detach()/accumulate
+            group=states[index]
+            for operation,state in enumerate(group):
+                last=micro==accumulate-1 and operation==len(group)-1
+                sync=network.no_sync() if world>1 and not last else nullcontext()
+                with sync:
+                    loss=network(state)
+                    if not torch.isfinite(loss): raise FloatingPointError(f'Nonfinite loss on {index}')
+                    (loss/(accumulate*len(group))).backward()
+                loss_value+=loss.detach()/(accumulate*len(group))
         norm=torch.nn.utils.clip_grad_norm_(trainable,config['gradient_clip_norm'],error_if_nonfinite=True)
         if step==1:
             if not any(p.grad is not None and bool(p.grad.abs().max()>0) for p in lora):

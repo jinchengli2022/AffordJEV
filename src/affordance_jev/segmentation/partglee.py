@@ -105,6 +105,8 @@ def save_raw(out, kind, rgb, masks, scores, labels, crop=None):
 
 def prepare_object_parts(adapter, job):
     out = Path(job["output"])
+    # A provided foreground skips save_raw(objects), which normally creates raw/.
+    (out / "raw").mkdir(parents=True, exist_ok=True)
     config = read(out/"config_snapshot.json")
     total = time.perf_counter()
     times = {}

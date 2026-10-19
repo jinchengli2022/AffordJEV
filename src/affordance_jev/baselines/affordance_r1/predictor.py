@@ -96,41 +96,61 @@ class Predictor:
     def predict(self, image, category):
         return self.predict_many([image], [category])[0]
 
-    def predict_many(self, images, categories):
+    def predict_many(self, images, categories, actions_per_image=None):
         torch = self.torch
         torch.cuda.synchronize()
         start = time.perf_counter()
         images = [image.convert('RGB') for image in images]
         assert len(images) == len(categories)
+        conditional = actions_per_image is not None
+        if conditional:
+            if len(actions_per_image) != len(images):
+                raise ValueError('One explicit action list per RGB is required')
+            lookup = {c['name']: c for c in self.classes}
+            groups = []
+            for actions in actions_per_image:
+                if not actions or len(set(actions)) != len(actions) or not set(actions) <= lookup.keys():
+                    raise ValueError('Invalid or duplicate requested actions')
+                groups.append([lookup[action] for action in actions])
+        else:
+            groups = [self.classes for _ in images]
         side = self.config['image_side']
         requests = []
-        for image, category in zip(images, categories):
+        for image, category, classes in zip(images, categories, groups):
             resized = image.resize((side, side), Image.Resampling.BILINEAR)
             chat = [self.processor.apply_chat_template(
                 [{'role': 'user', 'content': [{'type': 'image'},
                  {'type': 'text', 'text': prompt_for(category, c['name'])}]}],
-                tokenize=False, add_generation_prompt=True) for c in self.classes]
+                tokenize=False, add_generation_prompt=True) for c in classes]
             requests.extend({'prompt': p, 'multi_modal_data': {'image': resized}} for p in chat)
         pre = time.perf_counter()
         outputs = self.model.generate(requests, self.sampling, use_tqdm=False)
         torch.cuda.synchronize()
         generated = time.perf_counter()
         results = []
-        for i, image in enumerate(images):
-            results.append(self.segment(image, outputs[i*7:(i+1)*7], categories[i]))
+        offset = 0
+        for image, category, classes in zip(images, categories, groups):
+            results.append(self.segment(image, outputs[offset:offset+len(classes)], category,
+                                        classes=classes, merge=not conditional))
+            offset += len(classes)
+        assert offset == len(outputs)
         end = time.perf_counter()
         for result in results:
             timing = result[3]
             timing.update(preprocess_seconds_amortized=(pre-start)/len(images),
-                          generation_all_seven_seconds_amortized=(generated-pre)/len(images),
+                          generation_seconds_amortized_per_rgb=(generated-pre)/len(images),
                           batch_wall_seconds=end-start,
-                          rgb_to_all_classes_seconds=(end-start)/len(images),
+                          rgb_to_requested_masks_seconds=(end-start)/len(images),
                           seconds_kind='serial latency' if len(images)==1 else 'amortized batch throughput cost',
-                          image_batch=len(images), operation_batch=7*len(images),
+                          image_batch=len(images), operation_batch=len(requests),
+                          conditional_actions_only=conditional,
                           model_load_and_disk_io_excluded=True)
+            if not conditional:
+                timing.update(generation_all_seven_seconds_amortized=(generated-pre)/len(images),
+                              rgb_to_all_classes_seconds=(end-start)/len(images))
         return results
 
-    def segment(self, image, outputs, category):
+    def segment(self, image, outputs, category, classes=None, merge=True):
         torch = self.torch
         width, height = image.size
         side = self.config['image_side']
@@ -141,7 +161,8 @@ class Predictor:
             self.sam.set_image(image)
             torch.cuda.synchronize()
             encoded = time.perf_counter()
-            for i, (cls, output) in enumerate(zip(self.classes, outputs)):
+            for cls, output in zip(self.classes if classes is None else classes, outputs):
+                i = cls['id'] - 1
                 response = output.outputs[0]
                 record = {'class_id': cls['id'], 'action': cls['name'], 'response': response.text,
                           'object_category': category, 'prompt': prompt_for(category, cls['name']),
@@ -168,9 +189,11 @@ class Predictor:
                 records.append(record)
         torch.cuda.synchronize()
         segmented = time.perf_counter()
-        class_map = merge_logits(logits)
+        class_map = merge_logits(logits) if merge else None
         end = time.perf_counter()
         timing = {'sam_encoder_seconds': encoded-start,
-                  'sam_decoder_all_seven_seconds': segmented-encoded, 'merge_seconds': end-segmented,
+                  'sam_decoder_seconds': segmented-encoded, 'merge_seconds': end-segmented,
                   'model_load_and_disk_io_excluded': True}
+        if merge:
+            timing['sam_decoder_all_seven_seconds'] = segmented-encoded
         return class_map, logits, records, timing

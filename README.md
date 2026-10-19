@@ -4,7 +4,7 @@
 
 源码、模型配置、tokenizer、功能定义和训练入口均在本仓库内。**Conda 环境留在仓库外；Git 不包含大权重、数据集和实验输出。** 克隆后补齐权重及要处理的 RGB／数据集即可运行。
 
-[整体框架](docs/整体框架.md) · [环境安装](docs/环境安装.md) · [权重清单](models/README.md) · [训练复现](docs/训练复现.md) · [实验结果](docs/research/实验结果.md) · [迁移验证](docs/迁移验证.md)
+[整体框架](docs/research/整体框架.md) · [环境安装](docs/环境安装.md) · [权重清单](models/README.md) · [训练复现](docs/训练复现.md) · [实验结果](docs/research/实验结果.md) · [迁移验证](docs/迁移验证.md)
 
 ## 目录
 
@@ -48,6 +48,19 @@ bash scripts/infer.sh --input /path/to/image.jpg --output outputs/demo
 
 默认环境为 `partglee` 与 `valen-4b-sft`，默认 Conda 安装位置 `$HOME/miniconda3`。路径、配置、输出、权重和 `CUDA_VISIBLE_DEVICES` 都在脚本顶部，可直接修改。脚本由自身位置定位仓库，不依赖原机器的 `/home/ljc/code/Affordance`。
 
+若不提供具体物体／部件词表，使用通用配置：
+
+```bash
+bash scripts/infer.sh --input /path/to/image.jpg --output outputs/demo_generic \
+  --config configs/umd_pipeline_generic.json
+```
+
+该配置只向 PartGLEE 提供 `object` 和 `part`，不指定物体种类或部件名称；保留原有两次分割、50 个原始物体候选／50 个部件候选及最多 6 个互斥候选的设置。仍使用文本编码器，不能称为完全无文本输入。Valen 的功能类别与定义照常提供。
+
+历史结果使用 `configs/umd_pipeline.json` 中的 17 个物体名称和 18 个部件名称；通用配置会重新生成候选，旧表指标不能直接沿用。UMD 批量入口同样接受 `--config configs/umd_pipeline_generic.json`，同时需通过 `--output` 指定新目录。
+
+通用词表的给定操作全量实验已完成，结果与前景误选诊断见[实验结果](docs/research/实验结果.md)。通用配置仍为可选项；部分样例会将底板选作前景。[早期分步检查](outputs/partglee_generic_smoke_20261018/index.html)。
+
 原始模型使用 `configs/umd_affordances.json`。加载 UMD 微调版本时，额外传入完整 checkpoint，并使用训练时的 dominant 功能定义，例如：
 
 ```bash
@@ -71,6 +84,8 @@ bash scripts/eval_umd.sh      # 原始 dominant GT 评测和对照图
 默认评测 **2,661 张人工帧、5,232 个图像＋功能对**。使用七类原始 ID，忽略 void（−1），背景误报计入；关闭整物体限制。GT 只参与清单筛选、训练监督和评测，不进入正常推理输入。
 
 已有固定候选时，`scripts/infer_valen_umd.sh` 可只替换 Valen checkpoint 重跑分类及评测，默认演示 B0。首次运行应先通过 `infer_umd.sh` 生成候选缓存。
+
+**Valen 选择前景的新实验：** 修改脚本顶部路径与 GPU 后执行 `bash scripts/run_umd_valen_foreground.sh`。先检查 9 张图，再全量测试；原始 Valen 根据物体名＋操作逐候选判断，选出一个完整目标后重新分割部件，最终采用质心点 yes/no 判断。全部拒绝时输出空结果，不回退几何排序。此入口的固定功能对与对照来自此前本地实验，迁移时需提供对应清单和对照目录。[参数、输出与复现说明](src/affordance_jev/experiments/valen_foreground/README.md)
 
 ## 训练与可视化
 
